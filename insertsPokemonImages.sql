@@ -1,4 +1,3 @@
-INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/000.png'));
 INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/001.png'));
 INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/002.png'));
 INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/003.png'));
@@ -807,3 +806,4 @@ INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/8
 INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/806.png'));
 INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/807.png'));
 INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/808.png'));
+INSERT INTO PokemonImages (Type, Image)VALUES ('png',LOAD_FILE('/tmp/g1/images/809.png'));
