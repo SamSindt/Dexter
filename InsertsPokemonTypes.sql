@@ -1,23 +1,23 @@
 INSERT INTO TypeImages (Type, Image)
 VALUES
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/normal.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/fire.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/water.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/grass.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/electric.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/ice.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/fighting.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/poison.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/ground.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/flying.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/psychic.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/bug.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/rock.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/ghost.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/dark.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/dragon.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/steel.png')),
-('mime/png', LOAD_FILE('/tmp/g1/typeimages/fairy.png'));
+('image/png', LOAD_FILE('/tmp/g1/typeimages/normal.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/fire.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/water.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/grass.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/electric.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/ice.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/fighting.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/poison.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/ground.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/flying.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/psychic.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/bug.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/rock.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/ghost.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/dark.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/dragon.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/steel.png')),
+('image/png', LOAD_FILE('/tmp/g1/typeimages/fairy.png'));
 
 INSERT INTO Types (TypeName, TypeImageID)
 VALUES
@@ -173,8 +173,7 @@ FROM Types as attk
 JOIN TypeMatchups ON AttackingTypeID = attk.TypeID
 JOIN Types as def ON DefendingTypeID = def.TypeID
 JOIN DmgMods ON TypeMatchups.DmgID=DmgMods.DmgID
-WHERE attk.TypeName="Fire"
-;
+WHERE attk.TypeName="Fire";
 
 
 
