@@ -6,3 +6,5 @@
 
 # VSCode project files
 .project
+
+*.php
