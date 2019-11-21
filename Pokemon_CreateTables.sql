@@ -27,6 +27,7 @@ CREATE TABLE PokemonImages (
 	Image MEDIUMBLOB NOT NULL,
 	CONSTRAINT PokemonImages_IID_PK PRIMARY KEY (IID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE PokemonImages;
 
 CREATE TABLE PokemonSprites (
 	SID INT NOT NULL AUTO_INCREMENT,
@@ -34,6 +35,7 @@ CREATE TABLE PokemonSprites (
 	Image MEDIUMBLOB NOT NULL,
 	CONSTRAINT PokemonSprites_SID_PK PRIMARY KEY (SID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE PokemonSprites;
 
 CREATE TABLE Pokemon (
 	PKID INT NOT NULL AUTO_INCREMENT,
@@ -53,6 +55,7 @@ CREATE TABLE Pokemon (
 	CONSTRAINT Pokeomon_SID_FK FOREIGN KEY (SID)
 	REFERENCES PokemonSprites (SID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE Pokemon;
 
 
 #### Users ####
@@ -62,6 +65,7 @@ CREATE TABLE UserImages (
 	Image MEDIUMBLOB NOT NULL,
 	CONSTRAINT UserImages_UIID_PK PRIMARY KEY (UIID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE UserImages;
 
 CREATE TABLE Users (
 	UID INT NOT NULL AUTO_INCREMENT,
@@ -73,6 +77,7 @@ CREATE TABLE Users (
 	CONSTRAINT Users_UIID_FK FOREIGN KEY (UIID)
 	REFERENCES UserImages (UIID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE Users;
 
 CREATE TABLE HasTeamMember (
 	UID INT NOT NULL,
@@ -84,6 +89,7 @@ CREATE TABLE HasTeamMember (
 	CONSTRAINT HasTeamMember_PKID_FK FOREIGN KEY (PKID)
 	REFERENCES Pokemon (PKID) ON DELETE CASCADE
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE HasTeamMember;
 
 CREATE TABLE HasFavorite (
 	UID INT NOT NULL,
@@ -94,6 +100,7 @@ CREATE TABLE HasFavorite (
 	CONSTRAINT HasFavorite_PKID_FK FOREIGN KEY (PKID)
 	REFERENCES Pokemon (PKID) ON DELETE CASCADE
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE HasFavorite;
 
 
 #### Evolution ####
@@ -106,6 +113,7 @@ CREATE TABLE Evolutions (
 	CONSTRAINT Evolutions_EvolvesFrom_FK FOREIGN KEY (EvolvesFrom)
 	REFERENCES Pokemon (PKID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE Evolutions;
 
 
 #### Analogue ####
@@ -116,6 +124,7 @@ CREATE TABLE Analogs
 	
 	CONSTRAINT Analogs_PK PRIMARY KEY (AnalogID)
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE Analogs;
 
 CREATE TABLE HasAnalogs
 ( 
@@ -130,6 +139,7 @@ CREATE TABLE HasAnalogs
 	CONSTRAINT HasAnalogs_AnalogID_FK FOREIGN KEY (AnalogID)
 		REFERENCES Analogs (AnalogID) ON DELETE CASCADE
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE HasAnalogs;
 
 
 #### Color ####
@@ -139,6 +149,7 @@ CREATE TABLE Colors
 	ColorName VARCHARACTER(25) DEFAULT NULL,
 	CONSTRAINT Colors_PK PRIMARY KEY (ColorID)
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE Colors;
 
 CREATE TABLE HasColors
 ( 
@@ -153,6 +164,7 @@ CREATE TABLE HasColors
 	CONSTRAINT HasColors_ColorID_FK FOREIGN KEY (ColorID)
 		REFERENCES Colors (ColorID) ON DELETE CASCADE
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE HasColors;
 
 
 #### Type ####
@@ -163,6 +175,7 @@ CREATE TABLE TypeImages
 	Image MEDIUMBLOB NOT NULL,
 	CONSTRAINT TypeImages_TypeImageID_PK PRIMARY KEY (TypeImageID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE TypeImages;
 
 CREATE TABLE Types
 ( 
@@ -173,6 +186,7 @@ CREATE TABLE Types
 	CONSTRAINT Types_TypeImageID_FK FOREIGN KEY (TypeImageID)
 		REFERENCES TypeImages (TypeImageID)
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE Types;
 
 CREATE TABLE DmgMods
 (
@@ -180,6 +194,7 @@ CREATE TABLE DmgMods
 	Multiplier FLOAT4 NOT NULL,
 	CONSTRAINT DmgMods_DmgID_PK PRIMARY KEY (DmgID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE DmgMods;
 
 CREATE TABLE TypeMatchups
 ( 
@@ -194,6 +209,7 @@ CREATE TABLE TypeMatchups
 	CONSTRAINT TypeMatchups_DmgID_FK FOREIGN KEY (DmgID)
 		REFERENCES DmgMods (DmgID)
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE TypeMatchups;
 
 CREATE TABLE HasTypes
 ( 
@@ -207,6 +223,7 @@ CREATE TABLE HasTypes
 	CONSTRAINT HasTypes_TypeID_FK FOREIGN KEY (TypeID)
 		REFERENCES Types (TypeID) ON DELETE CASCADE
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE HasTypes;
 
 
 #### Egg Group ####
@@ -216,6 +233,7 @@ CREATE TABLE EggGroups
 	GroupName VARCHAR(50),
 	CONSTRAINT EggGroups_EggGroupID_PK PRIMARY KEY (EggGroupID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
+TRUNCATE TABLE EggGroups;
 
 CREATE TABLE InEggGroup
 ( 
@@ -229,5 +247,4 @@ CREATE TABLE InEggGroup
 	CONSTRAINT InEggGroup_EggGroupID_FK FOREIGN KEY (EggGroupID)
 		REFERENCES EggGroups (EggGroupID) ON DELETE CASCADE
 ) Engine=InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
-
-
+TRUNCATE TABLE InEggGroup;
