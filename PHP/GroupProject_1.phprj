@@ -1,0 +1,22 @@
+{
+ "m_name": "GroupProject_1",
+ "m_isActive": true,
+ "m_importFileSpec": "*.php;*.php5;*.inc;*.phtml;*.js;*.html;*.css;*.scss;*.less;*.json;*.xml;*.ini;*.md;*.txt;*.text;.htaccess;*.ctp",
+ "m_excludeFolders": ".git;.svn;.codelite;.clang",
+ "settings": {
+  "m_runAs": 1,
+  "m_phpExe": "/usr/bin/php",
+  "m_indexFile": "",
+  "m_args": "",
+  "m_workingDirectory": "",
+  "m_projectURL": "",
+  "m_includePath": "",
+  "m_ccIncludePath": "",
+  "m_flags": 5,
+  "m_phpIniFile": "",
+  "m_fileMapping": [{
+    "key": "/home/sind8948/Documents/DB_Group/CS445f19_Group1/PHP",
+    "value": "/srv/www/htdocs/php/sind8948/CS445f19_Group1/PHP"
+   }]
+ }
+}
