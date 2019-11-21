@@ -6,3 +6,6 @@
 
 # VSCode project files
 .project
+
+# codelite project files
+.phprj
