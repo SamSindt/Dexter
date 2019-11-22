@@ -8,4 +8,4 @@
 .project
 
 # codelite project files
-.phprj
+*.phprj
