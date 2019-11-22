@@ -1,10 +1,18 @@
 <?php
 
-   function db_connect ()
+   function db_connect_ro ()
    {
-       //needs to be change to the real db
-     $dbh = new PDO("mysql:host=127.0.0.1;dbname=sind8948_BigProject", 
-    	"sind8948", "cs445_!^%#");
+     $dbh = new PDO("mysql:host=127.0.0.1;dbname=db_group1_f19", 
+    	"db_group1_f19_ro", "db_group1_f19_!&");
+		 $dbh->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+     return ($dbh);
+   }
+	 
+	 function db_connect_w ()
+   {
+     $dbh = new PDO("mysql:host=127.0.0.1;dbname=db_group1_f19", 
+    	"db_group1_f19_w", "db_group1_f19_&!");
 		 $dbh->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
      return ($dbh);
