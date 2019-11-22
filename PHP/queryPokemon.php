@@ -1,9 +1,8 @@
 <?php
+	
+	function getPokemon ($dbh, $pkid) {
 
-	function getSpecificPokemon($dbh, $pkid)
-	{
-
-		$sth = $dbh -> prepare("SELECT DexNumber, Name, HP, Attack, Defense, SpAttack, SpDefense, Speed 
+		$sth = $dbh -> prepare("SELECT *
                                 FROM Pokemon 
                                 WHERE PKID =" . $pkid );
 		// run the query

@@ -2,9 +2,10 @@
 
 	require_once (__DIR__ . '/basicErrorHandling.php');
     require_once (__DIR__ . '/connDB.php');
-    require_once (__DIR__ . '/querySpecificPokemon.php');
+    require_once (__DIR__ . '/queryPokemon.php');
 	require_once (__DIR__ . '/queryType.php');
 	require_once (__DIR__ . '/queryType.php');
+	require_once (__DIR__ . '/queryEvolutions.php');
 	
 	if(isset($_GET['pkid'])) {
 		$pkid = $_GET['pkid'];
@@ -18,8 +19,8 @@
 
     $dbh = db_connect_ro();
 	
-	$pkData = getSpecificPokemon ($dbh, $pkid);
-	$typeData = getTypeImageIDByPokemon($dbh, $pkid);
+	$pkData = getPokemon ($dbh, $pkid);
+	
 ?>
 		
 <!doctype html>
@@ -38,8 +39,23 @@
 			<h3 class="col" id="pkNumber"><?php print 'Pokedex Number: ' . $pkData['DexNumber'] ?></h3>
 		
 			<?php 
+				$typeData = getTypeImageIDByPokemon($dbh, $pkid);
 				foreach ($typeData as $row) {
 					print "<img src=queryTypeImage.php?id=" . $row['TypeImageID'] . ">";
+				}
+				
+				$evFromData = getEvolvesFrom($dbh, $pkid);
+				if ($evFromData) {
+					 $evFromPKData = getPokemon ($dbh, $evFromData['EvolvesFrom']);
+					 print "<h4> Evolves From: <a href='showPokemon.php?pkid=" . $evFromPKData['PKID'] . "'>" 
+						. $evFromPKData['Name'] . "</a></h4>";
+				}
+				
+				$evToData = getEvolvesTo($dbh, $pkid);
+				if ($evToData) {
+					$evToPKData = getPokemon($dbh, $evToData['EvolvesTo']);
+					print "<h4> Evolves To: <a href='showPokemon.php?pkid=" . $evToPKData['PKID'] . "'>"
+						. $evToPKData['Name'] . "</a></h4>";
 				}
 			?>
 			
@@ -64,6 +80,9 @@
 					<th>Speed</th><th><?php print $pkData['Speed'] ?></th>
 				</tr>
 			</table>
+			
+			
+			
     </body>
 </html>
 
