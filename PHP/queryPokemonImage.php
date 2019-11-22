@@ -1,24 +1,23 @@
 <?php
-	require_once 'connDB.php';
+	require_once('connDB.php');
+	require_once('basicErrorHandling.php');
 	
-	$dbh = db_connect();
+	$dbh = db_connect_ro();
 
 	if( isset($_GET['id']) ) {
 	
 		$id = $_GET['id'];
 		
-		//$sth->bindValue(":picid",$id);
 		$sth = $dbh->prepare("SELECT Image, Type
 							  FROM PokemonImages
 							  WHERE IID=:picid");
-		$sth->bindValue(":picid",$id);
+		$sth->bindValue(":picid", $id);
 		
 	  $sth->execute();
 	  
 	  $row = $sth->fetch();
 		$data = $row['Image'];
 		$type = $row['Type'];
-		var_dump($row);
 	  Header( "Content-type: $type");
 	  print $data;
 	  
