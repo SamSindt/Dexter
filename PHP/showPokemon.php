@@ -6,6 +6,7 @@
 	require_once (__DIR__ . '/queryType.php');
 	require_once (__DIR__ . '/queryType.php');
 	require_once (__DIR__ . '/queryEvolutions.php');
+	require_once (__DIR__ . '/queryEggGroups.php');
 	
 	if(isset($_GET['pkid'])) {
 		$pkid = $_GET['pkid'];
@@ -47,14 +48,14 @@
 				$evFromData = getEvolvesFrom($dbh, $pkid);
 				if ($evFromData) {
 					 $evFromPKData = getPokemon ($dbh, $evFromData['EvolvesFrom']);
-					 print "<h4> Evolves From: <a href='showPokemon.php?pkid=" . $evFromPKData['PKID'] . "'>" 
+					 print "<h4>Evolves From: <a href='showPokemon.php?pkid=" . $evFromPKData['PKID'] . "'>" 
 						. $evFromPKData['Name'] . "</a></h4>";
 				}
 				
 				$evToData = getEvolvesTo($dbh, $pkid);
 				if ($evToData) {
 					$evToPKData = getPokemon($dbh, $evToData['EvolvesTo']);
-					print "<h4> Evolves To: <a href='showPokemon.php?pkid=" . $evToPKData['PKID'] . "'>"
+					print "<h4>Evolves To: <a href='showPokemon.php?pkid=" . $evToPKData['PKID'] . "'>"
 						. $evToPKData['Name'] . "</a></h4>";
 				}
 			?>
@@ -81,7 +82,21 @@
 				</tr>
 			</table>
 			
-			
+			<?php
+				$eggData = getEggGroupName($dbh, $pkid);
+				if ($eggData) {
+					$eggNamesStr = "";
+					
+					foreach ($eggData as $eggRow) {
+						$eggNamesStr = $eggNamesStr . $eggRow['GroupName'];
+						if ($eggRow != end ($eggData)) {
+							$eggNamesStr = $eggNamesStr . " and ";
+						}
+					}
+					
+					print "<h4>Egg Group: " . $eggNamesStr . "</h4>";
+				}
+			?>
 			
     </body>
 </html>
