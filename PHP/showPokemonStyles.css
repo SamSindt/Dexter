@@ -1,5 +1,63 @@
 body {
-	//background-color: grey;
-	//text-align: center;
+	background-color: #cfc6c6;
+	display: grid;
+	grid-template-columns: auto 440px auto;
+	color: black;
 }
 
+.card {
+	grid-column-start: 2;
+	background-color: #f54242;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+#pkName {
+	margin-top: 0;
+	text-align: center;
+}
+
+#numAndTypes {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#pkTypes h4 {
+	float: left;
+}
+
+#pkTypes img {
+	margin-top: 28px;
+	margin-left: 10px;
+}
+
+#pkEvol {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#evolFr {
+	margin: 0;
+}
+
+#evolTo {
+	margin: 0;
+}
+
+img {
+	background-color: white;
+	border-radius: 20px;
+}
+
+
+table {
+	width: 400px;
+	text-align: left;
+	border-collapse: collapse;
+	
+}
+
+th {
+	border: 1px solid black;
+	width: 50%;
+}
