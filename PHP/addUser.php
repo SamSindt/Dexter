@@ -1,6 +1,7 @@
 <?php
  
-	require_once 'connDB.php';
+	require_once ('connDB.php');
+	require_once ('basicErrorHandling.php')
 
 	if( (isset($_POST['user']) &&
 		isset($_POST['pass'])))
@@ -37,5 +38,8 @@
 		db_close($dbh);
 		print "User " . $user ." added";
 	}
- 
+	else 
+	{
+		print "No user to be added";
+	}
 ?>
