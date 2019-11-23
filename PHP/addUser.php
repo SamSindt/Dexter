@@ -1,8 +1,9 @@
 <?php
- 
 	require_once ('connDB.php');
 	require_once ('basicErrorHandling.php')
-
+	session_start();
+	print "We made it to the page";
+	
 	if( (isset($_POST['user']) &&
 		isset($_POST['pass'])))
 	{
@@ -17,7 +18,7 @@
 		
 		try
   	{
-			$sth = $dbh->prepare("INSERT INTO  Users VALUES (:UserName,:Password,:Salt)");
+			$sth = $dbh->prepare("INSERT INTO Users VALUES (:UserName,:Password,:Salt)");
 		
 			$hashedPW = crypt($passwd . $salt, '$2y$07$8d88bb4a9916b302c1c68c$');
 	
