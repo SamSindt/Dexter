@@ -12,7 +12,7 @@
 <html>
 
 	<head>
-		<title>logInUser</title>
+		<title>Login Screen</title>
 	</head>
 
 	<body>

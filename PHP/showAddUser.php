@@ -12,7 +12,7 @@
 <html>
 
 	<head>
-		<title>addingUser</title>
+		<title>Create an Account</title>
 	</head>
 
 	<body>
