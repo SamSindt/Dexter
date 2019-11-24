@@ -1,5 +1,7 @@
 <?php
 
+	require_once ('queryGetSalt.php');
+	
 	function queryValidateUser($dbh, $user, $passwd)
 	{
 		$retVal = FALSE;
@@ -16,7 +18,7 @@
 		
 		if (1 == $sth -> rowCount())
 		{
-			//print "Logged In";
+			print "Good User";
 			$retVal = TRUE;
 		}
 		else
