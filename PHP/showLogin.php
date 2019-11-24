@@ -36,7 +36,7 @@
 					
 					<input class="item" id="submit" TYPE="submit" NAME="btnLogin" VALUE="Login">
 				</form>
-				<a href="showAddUser.php">Register</a>
+				<a href="showAddUser.php">Create an Account</a>
 			</div>
 		</div>
 	</body>
