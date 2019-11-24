@@ -12,22 +12,33 @@
 <html>
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="navigationStyles.css" rel="stylesheet">
+		<link href="showLoginStyles.css" rel="stylesheet">
 		<title>Login Screen</title>
 	</head>
 	
 	<body>
-		<h1>Login</h1>
+		<div class="topBar">
+			<div class="title"><b>Pokedex</b></div>
+			<ul class="nav">
+				<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
+			</ul>
+		</div>
 		
-		<form method="post" name="formLogin" action="userAuth.php">
-		Username:
-		<input name="txtUser" size="15" type="text"><br>
-		Password:
-		<input name="txtPassword" size="15" type="password"><br>
-		
-		<input TYPE="submit" NAME="btnLogin" VALUE="Login">
-		
-		</form>
+		<div class="wrapper">
+			<div class="inner">
+				<h1>Login</h1>
+				
+				<form method="post" name="formLogin" action="userAuth.php">
+					<div class="item">Username:<input name="txtUser" size="15" type="text"><br></div>
+					<div class="item">Password:<input name="txtPassword" size="15" type="password"><br></div>
+					
+					<input class="item" id="submit" TYPE="submit" NAME="btnLogin" VALUE="Login">
+				</form>
+				<a href="showAddUser.php">Register</a>
+			</div>
+		</div>
 	</body>
 
 </html>
