@@ -15,7 +15,18 @@
 	</head>
 
 	<body>
-		
+	
+	<div class="topBar">
+		<div class="title"><b>Pokedex</b></div>
+			<ul class="nav">
+				<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
+				<li class="navItem"><a>Team</a></li>
+				<li class="navItem"><a>Favorites</a></li>
+				<li class="navItem"><a>Login</a></li>
+			</ul>
+		</div>
+	</div>
+	
 	<form method="post" action="showResultsPage.php">
 
 	Name:

@@ -15,10 +15,11 @@
 	function searchPokemon ($dbh, $searchParams) {
 		$sqlStatement = "SELECT Pokemon.PKID, Pokemon.Name ";
 		$sqlFrom = "FROM Pokemon";
+		$bIsSecond = False;
 		
 		if (!empty ($searchParams)) {
 			$sqlWhere = "";
-			$bIsSecond = False;
+			
 			
 			//PKID
 			if (isset ($searchParams['PKID']) && !empty($searchParams['PKID'])) {
@@ -114,7 +115,7 @@
 		if (!empty ($searchParams)) {
 			$sqlStatement .= $sqlWhere;
 		}
-		
+	
 		$rows = array();
 
 		$sth = $dbh -> prepare($sqlStatement);
