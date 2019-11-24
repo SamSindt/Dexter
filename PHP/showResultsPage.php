@@ -13,6 +13,7 @@
 <html lang="en-us">
     <head>
 		<meta charset="utf-8">
+		<link href="navigationStyles.css" rel="stylesheet">
 		<link href="showResultsPageStyles.css" rel="stylesheet">
 		<title>Search Results</title>
 	</head>
