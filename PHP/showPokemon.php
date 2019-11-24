@@ -29,92 +29,105 @@
     <head>
 		<meta charset="utf-8">
 		<link href="showPokemonStyles.css" rel="stylesheet">
+		<link href="navigationStyles.css" rel="stylesheet">
         <title><?php print $pkData['Name']?></title>
     <head>
 
 		<body>
-			<div class="card">
-				<h1 id="pkName"><?php print $pkData['Name'] ?></h1>
+			<div class="topBar">
+				<div class="title"><b>Pokedex</b></div>
+				<ul class="nav">
+					<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
+					<li class="navItem"><a>Team</a></li>
+					<li class="navItem"><a>Favorites</a></li>
+					<li class="navItem"><a href="showLogin.php">Login</a></li>
+				</ul>
+			</div>
 			
-				<img src="queryPokemonImage.php?id=<?php print $pkid ?>" id="pkImage"></br>
+			<div class="wrapper">
+				<div class="card">
+					<h1 id="pkName"><?php print $pkData['Name'] ?></h1>
 				
-				<div id="numAndTypes">
-				
-					<h4 id="pkNumber"><?php print 'Pokedex # ' . $pkData['DexNumber'] ?></h4>
+					<img src="queryPokemonImage.php?id=<?php print $pkid ?>" id="pkImage"></br>
 					
-					<div id="pkTypes">
-						<h4>Type: </h4>
-						<?php 
-							$typeData = getTypeImageIDByPokemon($dbh, $pkid);
-							foreach ($typeData as $row) {
-								print "<img src=queryTypeImage.php?id=" . $row['TypeImageID'] . ">";
+					<div id="numAndTypes">
+					
+						<h4 id="pkNumber"><?php print 'Pokedex # ' . $pkData['DexNumber'] ?></h4>
+						
+						<div id="pkTypes">
+							<h4>Type: </h4>
+							<?php 
+								$typeData = getTypeImageIDByPokemon($dbh, $pkid);
+								foreach ($typeData as $row) {
+									print "<img src=queryTypeImage.php?id=" . $row['TypeImageID'] . ">";
+								}
+							?>
+						
+						</div>
+					</div>
+					
+					<div id="pkEvol">
+						<?php
+							$evFromData = getEvolvesFrom($dbh, $pkid);
+							if ($evFromData) {
+								 $evFromPKData = getPokemon ($dbh, $evFromData['EvolvesFrom']);
+								 print "<h4 id='evolFr'>Evolves From: <a href='showPokemon.php?pkid=" . $evFromPKData['PKID'] . "'>" 
+									. $evFromPKData['Name'] . "</a></h4>";
+							}
+							
+							$evToData = getEvolvesTo($dbh, $pkid);
+							if ($evToData) {
+								$evToPKData = getPokemon($dbh, $evToData['EvolvesTo']);
+								print "<h4 id='evolTo'>Evolves To: <a href='showPokemon.php?pkid=" . $evToPKData['PKID'] . "'>"
+									. $evToPKData['Name'] . "</a></h4>";
 							}
 						?>
-					
 					</div>
+					
+					<div id="pkStats">
+					
+					<h4><u>Base Stats</u></h4>
+					<table>
+						<tr>
+							<th>HP</th><th><?php print $pkData['HP'] ?></th>
+						</tr>
+						<tr>
+							<th>Attack</th><th><?php print $pkData['Attack'] ?></th>
+						</tr>
+						<tr>
+							<th>Defense</th><th><?php print $pkData['Defense'] ?></th>
+						</tr>
+						<tr>
+							<th>Special Attack</th><th><?php print $pkData['SpDefense'] ?></th>
+						</tr>
+						<tr>
+							<th>Special Defense</th><th><?php print $pkData['SpAttack'] ?></th>
+						</tr>
+						<tr>
+							<th>Speed</th><th><?php print $pkData['Speed'] ?></th>
+						</tr>
+					</table>
 				</div>
 				
-				<div id="pkEvol">
+				<div id="pkEggs">
 					<?php
-						$evFromData = getEvolvesFrom($dbh, $pkid);
-						if ($evFromData) {
-							 $evFromPKData = getPokemon ($dbh, $evFromData['EvolvesFrom']);
-							 print "<h4 id='evolFr'>Evolves From: <a href='showPokemon.php?pkid=" . $evFromPKData['PKID'] . "'>" 
-								. $evFromPKData['Name'] . "</a></h4>";
-						}
-						
-						$evToData = getEvolvesTo($dbh, $pkid);
-						if ($evToData) {
-							$evToPKData = getPokemon($dbh, $evToData['EvolvesTo']);
-							print "<h4 id='evolTo'>Evolves To: <a href='showPokemon.php?pkid=" . $evToPKData['PKID'] . "'>"
-								. $evToPKData['Name'] . "</a></h4>";
+						$eggData = getEggGroupName($dbh, $pkid);
+						if ($eggData) {
+							$eggNamesStr = "";
+							
+							foreach ($eggData as $eggRow) {
+								$eggNamesStr = $eggNamesStr . $eggRow['GroupName'];
+								if ($eggRow != end ($eggData)) {
+									$eggNamesStr = $eggNamesStr . " and ";
+								}
+							}
+							
+							print "<h4>Egg Group: " . $eggNamesStr . "</h4>";
 						}
 					?>
 				</div>
-				
-				<div id="pkStats">
-				
-				<h4><u>Base Stats</u></h4>
-				<table>
-					<tr>
-						<th>HP</th><th><?php print $pkData['HP'] ?></th>
-					</tr>
-					<tr>
-						<th>Attack</th><th><?php print $pkData['Attack'] ?></th>
-					</tr>
-					<tr>
-						<th>Defense</th><th><?php print $pkData['Defense'] ?></th>
-					</tr>
-					<tr>
-						<th>Special Attack</th><th><?php print $pkData['SpDefense'] ?></th>
-					</tr>
-					<tr>
-						<th>Special Defense</th><th><?php print $pkData['SpAttack'] ?></th>
-					</tr>
-					<tr>
-						<th>Speed</th><th><?php print $pkData['Speed'] ?></th>
-					</tr>
-				</table>
 			</div>
-			
-			<div id="pkEggs">
-				<?php
-					$eggData = getEggGroupName($dbh, $pkid);
-					if ($eggData) {
-						$eggNamesStr = "";
-						
-						foreach ($eggData as $eggRow) {
-							$eggNamesStr = $eggNamesStr . $eggRow['GroupName'];
-							if ($eggRow != end ($eggData)) {
-								$eggNamesStr = $eggNamesStr . " and ";
-							}
-						}
-						
-						print "<h4>Egg Group: " . $eggNamesStr . "</h4>";
-					}
-				?>
-			</div>
-		</div>
+		</di>
     </body>
 </html>
 

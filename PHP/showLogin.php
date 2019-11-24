@@ -1,13 +1,3 @@
-<?php
-
- 	/*require_once('basicErrorHandling.php');
-	require_once ('connDB.php');
-	
-	session_start();
-
-	$dbh = db_connect_ro();*/
-?>
-
 <!doctype html>
 <html>
 
@@ -42,7 +32,3 @@
 	</body>
 
 </html>
-
-<?php
-	/*db_close($dbh);*/
-?>

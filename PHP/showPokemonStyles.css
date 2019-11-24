@@ -1,8 +1,9 @@
-body {
-	background-color: #cfc6c6;
+.wrapper {
 	display: grid;
 	grid-template-columns: auto 440px auto;
 	color: black;
+	height: 100vh;
+	overflow: scroll;
 }
 
 .card {
@@ -10,6 +11,8 @@ body {
 	background-color: #f54242;
 	padding: 20px;
 	border-radius: 20px;
+	margin-top: 20px;
+	
 }
 
 #pkName {
