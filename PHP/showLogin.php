@@ -17,15 +17,15 @@
 	</head>
 	
 	<body>
-		<h1>Login Here</h1>
+		<h1>Login</h1>
 		
 		<form method="post" name="formLogin" action="userAuth.php">
 		Username:
-		<input name="txtUser" size="15" type="text" /><br/>
+		<input name="txtUser" size="15" type="text"><br>
 		Password:
-		<input name="txtPassword" size="15" type="password" /><br/>
+		<input name="txtPassword" size="15" type="password"><br>
 		
-		<input TYPE="submit" NAME="btnLogin" VALUE="Login" />
+		<input TYPE="submit" NAME="btnLogin" VALUE="Login">
 		
 		</form>
 	</body>

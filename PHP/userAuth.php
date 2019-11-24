@@ -7,8 +7,8 @@ session_start();
 
 $_SESSION['VALID'] = 0;
 
-if (	isset($_POST['txtUser']) &&
-			isset($_POST['txtPassword']))
+if (isset($_POST['txtUser']) &&
+	isset($_POST['txtPassword']))
 {
 	$userID = $_POST['txtUser'];
 	$passwd = $_POST['txtPassword'];
@@ -21,10 +21,11 @@ if (	isset($_POST['txtUser']) &&
 	{
 		$_SESSION['VALID'] = 1;
 		//redirect to homepage
-		header('Location: showResultsPage.php');
+		header('Location: showPokemonSearch.php');
 	}
 	else
 	{
+		print "fail";
 		header('Location: showLogin.php');
 	}
 }

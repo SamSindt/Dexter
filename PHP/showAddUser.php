@@ -11,7 +11,7 @@
 <html>
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Create an Account</title>
 	</head>
 	
@@ -25,7 +25,7 @@
 		Password:
 		<input name="pass" size="15" type="password" ><br>
 		
-		<input TYPE="submit" NAME="btnRegister" VALUE="Register" />
+		<input TYPE="submit" NAME="btnRegister" VALUE="Register">
 		
 		</form>
 	</body>
