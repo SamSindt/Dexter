@@ -33,7 +33,7 @@
 			<h1>Search Results</h1>
 			<ul>
 				<?php
-					$searchData = searchPokemon($dbh, $_POST);
+					$searchData = searchPokemon($dbh, $_GET);
 					
 					foreach ($searchData as $data) {
 						print "<li><img src='queryPokemonSprites.php?id=" . $data['PKID'] . "'><a href='showPokemon.php?pkid=" . $data['PKID'] . "'>" . $data['Name'] . "</a></li>";
