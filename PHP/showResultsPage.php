@@ -21,8 +21,7 @@
 		<div class="topBar">
 			<div class="title"><b>Pokedex</b></div>
 			<ul class="nav">
-				<li class="navItem"><a>Home</a></li>
-				<li class="navItem"><a>Search</a></li>
+				<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
 				<li class="navItem"><a>Team</a></li>
 				<li class="navItem"><a>Favorites</a></li>
 				<li class="navItem"><a>Login</a></li>
@@ -30,6 +29,7 @@
 		</div>
 		
 		<div class="results">
+			<h1>Search Results</h1>
 			<ul>
 				<?php
 					$searchData = searchPokemon($dbh, $_POST);
