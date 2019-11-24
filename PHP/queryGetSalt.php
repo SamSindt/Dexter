@@ -1,5 +1,6 @@
 <?php
 
+	require_once ('basicErrorHandling.php');
 	function queryGetSalt($dbh, $user)
 	{
 		$retVal = "NONE";

@@ -17,7 +17,7 @@
 		
      return ($dbh);
    }
-	 
+
 	 function db_close (&$dbh)
 	 {
 	 	$dbh = NULL;
