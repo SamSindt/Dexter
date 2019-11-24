@@ -17,17 +17,17 @@
 		$sqlFrom = "FROM Pokemon";
 		
 		if (!empty ($searchParams)) {
-			$sqlWhere = " WHERE ";
+			$sqlWhere = "";
 			$bIsSecond = False;
 			
 			//PKID
-			if (isset ($searchParams['PKID'])) {
+			if (isset ($searchParams['PKID']) && !empty($searchParams['PKID'])) {
 				$sqlWhere .= "Pokemon.PKID = " . $searchParams['PKID']; 
 				$bIsSecond = True;
 			}
 			
-			//AnologID
-			if (isset ($searchParams['AnalogID'])) {
+			//Analog
+			if (isset ($searchParams['AnalogID']) && $searchParams['AnalogID'] != 0) {
 				$sqlFrom .= ", HasAnalogs, Analogs";
 				
 				if ($bIsSecond) {
@@ -37,14 +37,27 @@
 					$bIsSecond = True;
 				}
 				
-				$sqlWhere .= "Analogs.AnalogID = "
-					. $searchParams['AnalogID']
-					. " AND Analogs.AnalogID = HasAnalogs.AnalogID 
-						AND HasAnalogs.PokemonID = Pokemon.PKID";
+				$sqlWhere .= "Analogs.AnalogID = " . $searchParams['AnalogID']
+					. " AND Analogs.AnalogID = HasAnalogs.AnalogID
+					 AND HasAnalogs.PokemonID = Pokemon.PKID";
+			}
+			
+			//Name
+			if (isset ($searchParams['NameLike']) && !empty($searchParams['NameLike'])) {
+				if ($bIsSecond) {
+					$sqlWhere .= " AND ";
+				}
+				else {
+					$bIsSecond = True;
+				}
+				
+				$sqlWhere .= "LOWER(Pokemon.Name) LIKE LOWER(\"%"
+					. $searchParams['NameLike']
+					. "%\")";
 			}
 			
 			//ColorID
-			if (isset ($searchParams['ColorID'])) {
+			if (isset ($searchParams['ColorID']) && $searchParams['ColorID'] != 0) {
 				$sqlFrom .= ", HasColors, Colors";
 				
 				if ($bIsSecond) {
@@ -60,7 +73,7 @@
 			}
 			
 			//TypeID
-			if (isset ($searchParams['TypeID'])) {
+			if (isset ($searchParams['TypeID']) && $searchParams['TypeID'] != 0) {
 				$sqlFrom .= ", HasTypes, Types";
 				
 				if ($bIsSecond) {
@@ -76,7 +89,7 @@
 			}
 			
 			//EggGroupID
-			if (isset ($searchParams['EggGroupID'])) {
+			if (isset ($searchParams['EggGroupID']) &&  $searchParams['EggGroupID'] != 0) {
 				$sqlFrom .= ", InEggGroup, EggGroups";
 				
 				if ($bIsSecond) {
@@ -93,6 +106,10 @@
 		}
 		
 		$sqlStatement .= $sqlFrom;
+		
+		if ($bIsSecond) {
+			$sqlWhere = " WHERE " . $sqlWhere;
+		}
 		
 		if (!empty ($searchParams)) {
 			$sqlStatement .= $sqlWhere;
