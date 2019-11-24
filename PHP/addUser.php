@@ -44,3 +44,18 @@
 		print "No user to be added";
 	}
 ?>
+
+<!doctype html>
+<html lang="en-us">
+
+	<head></head>
+	<body>
+	<br/>
+		<ul>
+			<li><a href="showPokemonSearch.php">Home</a></li>
+			<li><a href="showLogin.php">Login</a></li>
+		</ul>
+	
+	</body>
+
+</html>
