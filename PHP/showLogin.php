@@ -14,7 +14,7 @@
 	<head>
 		<title>Login Screen</title>
 	</head>
-
+	
 	<body>
 		<form method="post" name="formLogin" action=
 		"userAuth.php">

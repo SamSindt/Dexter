@@ -14,16 +14,16 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Create an Account</title>
 	</head>
-
+	
 	<body>
 	<h1>Create an Account</h1>
 		
 		<form method="post" action="addUser.php">
 		
 		Username:
-		<input name="user" size="15" type="text" /><br/>
+		<input name="user" size="15" type="text" ><br>
 		Password:
-		<input name="pass" size="15" type="password" /><br/>
+		<input name="pass" size="15" type="password" ><br>
 		
 		<input TYPE="submit" NAME="btnRegister" VALUE="Register" />
 		
