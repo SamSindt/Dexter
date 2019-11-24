@@ -15,7 +15,7 @@
 		$sth->bindValue(":user", $user);
 		$sth->bindValue(":pass", $hashedPW);
 		$sth->execute();
-		
+	
 		if (1 == $sth -> rowCount())
 		{
 			print "Good User";

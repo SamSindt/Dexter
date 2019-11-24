@@ -2,7 +2,7 @@
 	require_once ('connDB.php');
 	require_once ('basicErrorHandling.php');
 	session_start();
-	
+
 	if( (isset($_POST['user']) &&
 		isset($_POST['pass'])))
 	{
