@@ -35,7 +35,7 @@
 	
 		<div class="wrapper">
 	
-		<form method="post" action="showResultsPage.php">
+		<form method="get" action="showResultsPage.php">
 		
 		<div class="formField">Name:
 			<input TYPE="search" NAME="NameLike">
