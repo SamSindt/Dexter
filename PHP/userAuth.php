@@ -25,7 +25,7 @@ if (isset($_POST['txtUser']) &&
 	}
 	else
 	{
-		print "fail";
+		print "\nfail";
 		header('Location: showLogin.php');
 	}
 }
