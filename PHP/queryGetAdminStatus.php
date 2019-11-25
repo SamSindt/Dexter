@@ -1,4 +1,5 @@
 <?php
+	require_once ('basicErrorHandling.php');
 	
 	function getAdminStatus($dbh, $userID)
 	{

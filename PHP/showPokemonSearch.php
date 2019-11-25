@@ -27,7 +27,7 @@
 				<ul class="nav">
 					<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
 					<li class="navItem"><a>Team</a></li>
-					<li class="navItem"><a>Favorites</a></li>
+					<li class="navItem"><a href="showFavorites.php">Favorites</a></li>
 					<li class="navItem">
 						<?php 
 							if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
@@ -97,7 +97,7 @@
 						
 						foreach ( $data as $row )
 						{
-						print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
+							print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
 						}
 					?>
 				</select>
@@ -111,7 +111,7 @@
 						
 						foreach ( $data as $row )
 						{
-						print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
+							print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
 						}
 					?>
 				</select>

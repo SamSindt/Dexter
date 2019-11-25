@@ -1,4 +1,5 @@
 <?php
+	require_once ('basicErrorHandling.php');
 	
 	function getUserID($dbh, $userID)
 	{
