@@ -12,7 +12,6 @@ DROP TABLE IF EXISTS
 	Analogs,
 	Evolutions,
 	HasFavorite,
-	HasTeamMember,
 	Users,
 	UserImages,
 	Pokemon,
@@ -79,18 +78,6 @@ CREATE TABLE Users (
 	REFERENCES UserImages (UIID)
 ) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
 TRUNCATE TABLE Users;
-
-CREATE TABLE HasTeamMember (
-	UID INT NOT NULL,
-	PKID INT NOT NULL,
-	TeamOrder INT NOT NULL,
-	CONSTRAINT HasTeamMember_PK PRIMARY KEY (UID, PKID),
-	CONSTRAINT HasTeamMember_UID_FK FOREIGN KEY (UID)
-	REFERENCES Users (UID) ON DELETE CASCADE,
-	CONSTRAINT HasTeamMember_PKID_FK FOREIGN KEY (PKID)
-	REFERENCES Pokemon (PKID) ON DELETE CASCADE
-) Engine = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin;
-TRUNCATE TABLE HasTeamMember;
 
 CREATE TABLE HasFavorite (
 	UID INT NOT NULL,
