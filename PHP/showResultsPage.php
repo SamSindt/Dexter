@@ -24,28 +24,30 @@
 		<div class="topBar">
 			<div class="title"><b>Pokedex</b></div>
 			<ul class="nav">
-				<li class="navItem">
-					<?php 
-						if (TRUE == $_SESSION['isAdmin'])
-						{
-							print "<a href='showAdminPage.php'>Admin</a>";
-						}
-					?>
-				</li>
-				<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
-				<li class="navItem"><a>Team</a></li>
-				<li class="navItem"><a href="showFavorites.php">Favorites</a></li>
-				<li class="navItem">
-					<?php 
-						if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
-							print "<a href='#' onclick='logout(this)'>Logout</a>";
-						}
-						else {
-							print "<a href='showLogin.php'>Login</a>";
-						}
-					?>
-				</li>
-			</ul>
+					<li class="navItem">
+						<?php 
+							if (isset($_SESSION['isAdmin']))
+							{
+								if (TRUE == $_SESSION['isAdmin'])
+								{
+									print "<a href='showAdminPage.php'>Admin</a>";
+								}
+							}
+						?>
+					</li>
+					<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
+					<li class="navItem"><a href="showFavorites.php">Favorites</a></li>
+					<li class="navItem">
+						<?php 
+							if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
+								print "<a href='#' onclick='logout(this)'>Logout</a>";
+							}
+							else {
+								print "<a href='showLogin.php'>Login</a>";
+							}
+						?>
+					</li>
+				</ul>
 		</div>
 		
 		<div class="results">

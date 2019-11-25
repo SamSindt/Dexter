@@ -27,14 +27,16 @@
 				<ul class="nav">
 					<li class="navItem">
 						<?php 
-							if (TRUE == $_SESSION['isAdmin'])
+							if (isset($_SESSION['isAdmin']))
 							{
-								print "<a href='showAdminPage.php'>Admin</a>";
+								if (TRUE == $_SESSION['isAdmin'])
+								{
+									print "<a href='showAdminPage.php'>Admin</a>";
+								}
 							}
 						?>
 					</li>
 					<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
-					<li class="navItem"><a>Team</a></li>
 					<li class="navItem"><a href="showFavorites.php">Favorites</a></li>
 					<li class="navItem">
 						<?php 
