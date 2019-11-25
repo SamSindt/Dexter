@@ -19,6 +19,7 @@
 		<link href="navigationStyles.css" rel="stylesheet">
 		<link href="showResultsPageStyles.css" rel="stylesheet">
 		<link href="showFavoritesStyles.css" rel="stylesheet">
+		<script src="logout.js"></script>
 		<script src="favoriting.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
@@ -42,8 +43,7 @@
 					<li class="navItem">
 						<?php 
 							if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
-								session_destroy();
-								print "<a href='showFavorites.php'>Logout</a>";
+								print "<a href='showFavorites.php' onclick='logout(this)'>Logout</a>";
 							}
 							else {
 								print "<a href='showLogin.php'>Login</a>";
