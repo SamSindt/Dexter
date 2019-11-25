@@ -4503,7 +4503,3 @@ VALUES
 INSERT INTO UserImages (Type, Image)
 VALUES 
 	('image/png', LOAD_FILE('/tmp/g1/userImages/trainerRed.png'));
-	
-INSERT INTO Users (UserName, Password, Admin, Salt)
-VALUES ("admin", "$2y$07$8d88bb4a9916b302c1c68OMlTXygIP8BQv5bBzuWDBrJBM72p.THu",
-1, "b879166c519c3b89f6f3");
