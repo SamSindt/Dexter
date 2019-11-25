@@ -8,7 +8,8 @@
 	require_once (__DIR__ . '/queryEvolutions.php');
 	require_once (__DIR__ . '/queryEggGroups.php');
 	require_once (__DIR__ . '/queryFavorites.php');
-	require_once __DIR__ . '/queryColors.php';
+	require_once (__DIR__ . '/queryColors.php');
+	require_once (__DIR__ . '/queryAnalog.php');
 	
 	if(isset($_GET['pkid'])) {
 		$pkid = $_GET['pkid'];
@@ -163,17 +164,31 @@
 				<div class="adminChanges">
 					<?php 
 						if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID'] && $_SESSION['isAdmin']) {
+							//Colors
 							print "<form method='post' action='addColor.php'>
-								<input type='hidden' name='pkid' value='" . $pkData['PKID'] . "'><select NAME='ColorID'>";
+								<input type='hidden' name='pkid' value='" . $pkData['PKID'] . "'><select name='ColorID'>";
 			
-							$data = getUnusedColors($dbh, $pkData['PKID']);
+							$colorData = getUnusedColors($dbh, $pkData['PKID']);
 							
-							foreach ( $data as $row )
+							foreach ( $colorData as $row )
 							{
-								print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
+								print '<option value=' . $row[0] . '> ' . $row[1] . '</option>';
 							}
 				
 							print "</select><input TYPE='submit' NAME='btn' VALUE='Add Color'></form>";
+							
+							//Anologs
+							print "<form method='post' action='addAnalog.php'>
+								<input type='hidden' name='pkid' value='" . $pkData['PKID'] . "'><select name='AnalogID'>";
+								
+							$anologData = getUnusedAnalog($dbh, $pkData['PKID']);
+							
+							foreach ($anologData as $row) {
+								print "<option value=" . $row[0] . ">" . $row[1] . "</option>";
+							}
+							
+							print "</select><input TYPE='submit' NAME='btn' VALUE='Add Analog'></form>";
+								
 						}
 					?>
 				</div>

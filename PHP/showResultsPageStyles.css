@@ -14,7 +14,7 @@
 .results ul {
 	grid-column-start: 2;
 	display: block;
-	height: 100vh;
+	height: 80vh;
 	overflow: auto;
 	list-style: none;
 }
