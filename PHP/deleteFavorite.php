@@ -14,5 +14,6 @@
 		db_close($dbh);
 		
 	}
-	header('Location: showFavorites.php');
+	//replace for async
+	//header('Location: showFavorites.php');
 ?>
