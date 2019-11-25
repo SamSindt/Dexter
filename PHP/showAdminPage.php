@@ -15,8 +15,8 @@
 <html lang="en-us">
     <head>
 		<meta charset="utf-8">
-		<!--<link href="showPokemonStyles.css" rel="stylesheet">-->
 		<link href="navigationStyles.css" rel="stylesheet">
+		<link href="showAdminPageStyles.css" rel="stylesheet">
 		<script src="logout.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>Admin</title>
@@ -51,29 +51,26 @@
 					</li>
 				</ul>
 			</div>
-			<h1>Welcome Admin</h1>
-			<h3>All Non-Admin</h3>
-			<div>
-			<table>
-				<tr><th>UserID</th><th>UserName</th></tr>
-				<?php 
-					$userData = queryGetUserInfo($dbh);
-					foreach ($userData as $row)
-					{
-						print "<tr><th>" . $row[0] . "</th><th>" . $row[1] . "</th></tr>";
-					}
-				?>
-			</table>
+			<div class="wrapper">
+				<form method="post" action="showUpdateUser.php">
+			
+					<div>UserID:<input name="txtUserID" size="15" type="text">
+						<input TYPE="submit" NAME="btnUserUpdate" VALUE="Make Admin">
+					</div>
+				
+				</form>
+				<table>
+					<tr><th>UserID</th><th>UserName</th></tr>
+					<?php 
+						$userData = queryGetUserInfo($dbh);
+						foreach ($userData as $row)
+						{
+							print "<tr><th>" . $row[0] . "</th><th>" . $row[1] . "</th></tr>";
+						}
+					?>
+				</table>
 			</div>
-			<h3>Make Admin?</h3>
-			<form method="post" action="showUpdateUser.php">
-			
-			<div>UserID of new Admin:	<input name="txtUserID" size="15" type="text"><br></div>
-			<input TYPE="submit" NAME="btnUserUpdate" VALUE="Make Admin">
-			
-			</form>
 		</body>
-		
 </html>
  
  <?php 
