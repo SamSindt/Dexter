@@ -16,6 +16,8 @@
 		<title>Home</title>
 		<link href="navigationStyles.css" rel="stylesheet">
 		<link href="showPokemonSearchStyles.css" rel="stylesheet">
+		<script src="logout.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -26,7 +28,16 @@
 					<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
 					<li class="navItem"><a>Team</a></li>
 					<li class="navItem"><a>Favorites</a></li>
-					<li class="navItem"><a href="showLogin.php">Login</a></li>
+					<li class="navItem">
+						<?php 
+							if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
+								print "<a href='#' onclick='logout(this)'>Logout</a>";
+							}
+							else {
+								print "<a href='showLogin.php'>Login</a>";
+							}
+						?>
+					</li>
 				</ul>
 			</div>
 		</div>
