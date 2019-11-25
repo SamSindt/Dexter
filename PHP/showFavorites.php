@@ -20,6 +20,7 @@
 		<link href="showResultsPageStyles.css" rel="stylesheet">
 		<link href="showFavoritesStyles.css" rel="stylesheet">
 		<script src="logout.js"></script>
+		<script src="favoriting.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
@@ -58,12 +59,10 @@
 					if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
 						$favoritesData = getUserFavorites($dbh);
 						foreach ($favoritesData as $favorite) {
-							print "<li><img src='queryPokemonSprites.php?id=" 
+							print "<li id='" . $favorite['PKID'] . "'><img src='queryPokemonSprites.php?id=" 
 								. $favorite['PKID'] . "'><a href='showPokemon.php?pkid=" 
 								. $favorite['PKID'] . "'>" . $favorite['Name']
-								. "</a><form action='deleteFavorite.php' method='post'>
-								<button type='submit' name='pkid' value='". $favorite['PKID']
-								. "' class='close'>X</button></form></li>";
+								. "</a><button onclick='unfaveList(" . $favorite['PKID'] . ")' class='close'>X</button></form></li>";
 						}
 						
 					}
