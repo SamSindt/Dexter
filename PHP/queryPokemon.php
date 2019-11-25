@@ -16,6 +16,7 @@
 		$sqlStatement = "SELECT Pokemon.PKID, Pokemon.Name ";
 		$sqlFrom = "FROM Pokemon";
 		$bIsSecond = False;
+		$bUsingName = False;
 		
 		if (!empty ($searchParams)) {
 			$sqlWhere = "";
@@ -52,9 +53,11 @@
 					$bIsSecond = True;
 				}
 				
-				$sqlWhere .= "LOWER(Pokemon.Name) LIKE LOWER(\"%"
-					. $searchParams['NameLike']
-					. "%\")";
+				$sqlWhere .= "LOWER(Pokemon.Name) LIKE LOWER("
+					. ":namelike"
+					. ")";
+				$bUsingName = True;
+				$nameLike = '%'.$searchParams['NameLike'].'%';
 			}
 			
 			//ColorID
@@ -119,6 +122,11 @@
 		$rows = array();
 
 		$sth = $dbh -> prepare($sqlStatement);
+		
+		if ($bUsingName) {
+			$sth -> bindValue(":namelike", $nameLike);
+		}
+		
 		$sth -> execute();
 		
 		while ($row = $sth -> fetch ()) {
