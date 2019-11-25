@@ -8,6 +8,7 @@
 	require_once (__DIR__ . '/queryEvolutions.php');
 	require_once (__DIR__ . '/queryEggGroups.php');
 	require_once (__DIR__ . '/queryFavorites.php');
+	require_once __DIR__ . '/queryColors.php';
 	
 	if(isset($_GET['pkid'])) {
 		$pkid = $_GET['pkid'];
@@ -159,6 +160,24 @@
 						}
 					?>
 				</div>
+				<div class="adminChanges">
+					<?php 
+						if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID'] && $_SESSION['isAdmin']) {
+							print "<form method='post' action='addColor.php'>
+								<input type='hidden' name='pkid' value='" . $pkData['PKID'] . "'><select NAME='ColorID'>";
+			
+							$data = getUnusedColors($dbh, $pkData['PKID']);
+							
+							foreach ( $data as $row )
+							{
+								print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
+							}
+				
+							print "</select><input TYPE='submit' NAME='btn' VALUE='Add Color'></form>";
+						}
+					?>
+				</div>
+				
 			</div>
 		</di>
     </body>
