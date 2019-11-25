@@ -7,6 +7,7 @@
 	require_once (__DIR__ . '/queryType.php');
 	require_once (__DIR__ . '/queryEvolutions.php');
 	require_once (__DIR__ . '/queryEggGroups.php');
+	require_once (__DIR__ . '/queryFavorites.php');
 	
 	if(isset($_GET['pkid'])) {
 		$pkid = $_GET['pkid'];
@@ -65,8 +66,18 @@
 			
 			<div class="wrapper">
 				<div class="card">
-					<h1 id="pkName"><?php print $pkData['Name'] ?></h1>
-				
+					<div class="header">
+						<h1 id="pkName"><?php print $pkData['Name'] ?></h1>
+						<?php 
+							if (checkIfFavorite($dbh, $pkData['PKID'])) {
+								print "<h1 class='fave' id='faved'>★</h1> ";
+							}
+							else {
+								print "<h1 class='fave' id='unfaved'>☆</h1>";
+							}
+						?>
+					</div>
+					
 					<img src="queryPokemonImage.php?id=<?php print $pkid ?>" id="pkImage"></br>
 					
 					<div id="numAndTypes">
