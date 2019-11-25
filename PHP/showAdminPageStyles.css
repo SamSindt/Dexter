@@ -1,0 +1,22 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: auto 350px auto;
+	justify-items: center;
+}
+
+.wrapper form {
+	margin: 20px 0;
+	grid-column-start: 2;
+	width: 350px;
+}
+
+.wrapper table {
+	grid-column-start: 2;
+	overflow: auto;
+	text-align: left;
+	width: 100%;
+}
+
+.wrapper tr:nth-child(odd) {
+	background-color: white;
+}
