@@ -29,14 +29,11 @@
 	margin-top: 0;
 	grid-column-start: 3;
 	justify-self: right;
+	font-weight: lighter;
 }
 
 #faved {
 	color: yellow;
-}
-
-#unfaved {
-	font-weight: lighter;
 }
 
 #numAndTypes {

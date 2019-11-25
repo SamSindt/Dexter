@@ -32,6 +32,7 @@
 		<link href="showPokemonStyles.css" rel="stylesheet">
 		<link href="navigationStyles.css" rel="stylesheet">
 		<script src="logout.js"></script>
+		<script src="favoriting.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title><?php print $pkData['Name']?></title>
     <head>
@@ -73,7 +74,7 @@
 								print "<h1 class='fave' id='faved'>★</h1> ";
 							}
 							else {
-								print "<h1 class='fave' id='unfaved'>☆</h1>";
+								print "<h1 class='fave' id='unfaved' onclick='favorite(this, " . $pkData['PKID'] . ")'>☆</h1>";
 							}
 						?>
 					</div>
