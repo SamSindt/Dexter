@@ -42,8 +42,7 @@
 					<li class="navItem">
 						<?php 
 							if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
-								session_destroy();
-								print "<a href='showPokemonSearch.php'>Logout</a>";
+								print "<a href='showPokemonSearch.php' onclick='logout(this)'>Logout</a>";
 							}
 							else {
 								print "<a href='showLogin.php'>Login</a>";
