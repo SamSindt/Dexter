@@ -22,3 +22,26 @@
 		}
 		return $rows;
 	}
+	
+	function checkIfFavorite ($dbh, $pkid) {
+		
+		$bFlag = false;
+		
+		if (isset ($_SESSION['userID'])) {
+			$sth = $dbh -> prepare("SELECT *
+									FROM HasFavorite, Pokemon  
+									WHERE UID = " . $_SESSION['userID']
+									. " AND HasFavorite.PKID = " . $pkid);
+		
+			$sth -> execute();
+			
+			$result = $sth -> fetch();
+			
+			if ($result) {
+				$bFlag = true;
+			}
+		}
+		
+		return $bFlag;
+	}
+?>
