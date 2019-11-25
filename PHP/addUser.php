@@ -48,14 +48,11 @@
 <!doctype html>
 <html lang="en-us">
 
-	<head></head>
+	<head>
+	<meta http-equiv = "refresh" content = "1; url = ./showLogin.php" />
+	</head>
 	<body>
-	<br/>
-		<ul>
-			<li><a href="showPokemonSearch.php">Home</a></li>
-			<li><a href="showLogin.php">Login</a></li>
-		</ul>
-	
+	<br/>	
 	</body>
 
 </html>
