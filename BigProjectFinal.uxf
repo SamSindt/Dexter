@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>117</x>
+      <y>315</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Users
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>459</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Pokemon
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>450</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1035</x>
+      <y>684</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>EggGroup</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>333</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Color
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>810</x>
+      <y>423</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasType
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>657</x>
+      <y>459</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>459</y>
+      <w>144</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>819</x>
+      <y>306</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasColor
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>342</y>
+      <w>207</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;130.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>927</x>
+      <y>342</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>819</x>
+      <y>648</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>InEggGroup
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>477</y>
+      <w>216</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1233</x>
+      <y>423</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>TypeMatch
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>459</y>
+      <w>153</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>441</y>
+      <w>153</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>657</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>DMGModifier</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1287</x>
+      <y>567</y>
+      <w>27</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>684</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>288</y>
+      <w>99</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1134</x>
+      <y>297</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_CID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1134</x>
+      <y>333</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1026</x>
+      <y>720</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_EGID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1035</x>
+      <y>486</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_TID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>468</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_PKID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1350</x>
+      <y>648</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_DMGID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>0</x>
+      <y>315</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_UID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>504</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>DexNumber</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>540</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>585</x>
+      <y>756</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>EvolvesTo
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>477</y>
+      <w>90</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>lt=-
+EvolvesTo</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>477</y>
+      <w>117</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+
+
+EvolvesFrom</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1035</x>
+      <y>522</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1350</x>
+      <y>684</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Multiplier</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1026</x>
+      <y>756</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>621</x>
+      <y>279</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasAnologue
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>189</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Analogue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>603</x>
+      <y>360</y>
+      <w>90</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;110.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>603</x>
+      <y>207</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>666</x>
+      <y>144</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_AID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>666</x>
+      <y>180</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Thing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>0</x>
+      <y>351</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>User Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>0</x>
+      <y>387</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Email</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>306</x>
+      <y>333</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasFavorite
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>324</y>
+      <w>180</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>369</y>
+      <w>180</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;180.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>144</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>PokemonImages</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>405</x>
+      <y>36</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_IID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>405</x>
+      <y>108</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>405</x>
+      <y>72</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>414</x>
+      <y>198</y>
+      <w>144</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasPokemonImage
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>279</y>
+      <w>126</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>0</x>
+      <y>423</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Salt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>261</x>
+      <y>567</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasSprite
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>54</x>
+      <y>621</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>PokemonSprites</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>63</x>
+      <y>585</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>63</x>
+      <y>549</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>63</x>
+      <y>513</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_SID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>459</y>
+      <w>225</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>99</x>
+      <y>126</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>UserImages</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>108</x>
+      <y>90</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>108</x>
+      <y>54</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>108</x>
+      <y>18</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_UIID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>108</x>
+      <y>189</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasUserImage
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>153</x>
+      <y>270</y>
+      <w>36</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>144</y>
+      <w>45</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>441</x>
+      <y>162</y>
+      <w>63</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>50.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>153</x>
+      <y>603</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1341</x>
+      <y>333</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>HasTypeImage
+
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(width/2,0,width,height/2)
+drawLine(width,height/2,width/2,height)
+drawLine(width/2,height,0,height/2)
+drawLine(0,height/2,width/2,0)
+halign=center
+valign=center
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>369</y>
+      <w>279</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1602</x>
+      <y>396</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>TypeImages</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1611</x>
+      <y>360</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1611</x>
+      <y>324</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1611</x>
+      <y>288</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_TIID_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1449</x>
+      <y>369</y>
+      <w>171</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=3</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>0</x>
+      <y>459</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>HashedPwd</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>999</x>
+      <y>414</y>
+      <w>369</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>
+/// DO NOT EDIT THE CODE BELOW
+customelement=
+//arithmetical skills
+drawLine(0,0,width,0) lt=.
+drawLine(width,0,width,height) lt=.
+drawLine(width,height,0,height)  lt=.
+drawLine(0,height,0,0) lt=.
+halign=center
+valign=center
+lw=3
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>576</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>HP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>612</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Attack</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>648</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Defense</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>684</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>SpAttack</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>720</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>SpDefense</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>468</x>
+      <y>756</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Speed</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
