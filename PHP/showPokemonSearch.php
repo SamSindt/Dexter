@@ -66,7 +66,7 @@
 			<div class="formField">ID:
 				<input TYPE="number" NAME="PKID"
 					<?php
-						print " MIN=\"" . getLowestPKID($dbh) . "	\" MAX=\"" . getHighestPKID($dbh) . "\">";
+						print " MIN=\"" . getLowestPKID($dbh) . "\" MAX=\"" . getHighestPKID($dbh) . "\">";
 					?>
 			</div>
 			
