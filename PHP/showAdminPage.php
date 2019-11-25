@@ -15,7 +15,7 @@
 <html lang="en-us">
     <head>
 		<meta charset="utf-8">
-		<link href="showPokemonStyles.css" rel="stylesheet">
+		<!--<link href="showPokemonStyles.css" rel="stylesheet">-->
 		<link href="navigationStyles.css" rel="stylesheet">
 		<script src="logout.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
