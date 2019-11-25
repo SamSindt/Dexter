@@ -11,7 +11,7 @@
 			TRUE == $_SESSION['isAdmin'])
 	{
 		$userID = $_POST['txtUserID'];
-		
+	
 		$dbh = db_connect_w();
 		
 		queryUpdateUser($dbh, $userID);

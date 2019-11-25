@@ -19,13 +19,21 @@
 		<link href="navigationStyles.css" rel="stylesheet">
 		<script src="logout.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <title>Admin Page</title>
+        <title>Admin</title>
     </head>
 
 		<body>
 			<div class="topBar">
 				<div class="title"><b>Pokedex</b></div>
 				<ul class="nav">
+					<li class="navItem">
+						<?php 
+							if (TRUE == $_SESSION['isAdmin'])
+							{
+								print "<a href='showAdminPage.php'>Admin</a>";
+							}
+						?>
+					</li>
 					<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
 					<li class="navItem"><a>Team</a></li>
 					<li class="navItem"><a>Favorites</a></li>
@@ -36,14 +44,6 @@
 							}
 							else {
 								print "<a href='showLogin.php'>Login</a>";
-							}
-						?>
-					</li>
-					<li class="navItem">
-						<?php 
-							if (TRUE == $_SESSION['isAdmin'])
-							{
-								print "<a href='showAdminPage.php'>Admin</a>";
 							}
 						?>
 					</li>
