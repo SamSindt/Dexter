@@ -3,7 +3,7 @@
 	grid-template-columns: auto 440px auto;
 	color: black;
 	height: 100vh;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .card {
@@ -12,6 +12,7 @@
 	padding: 20px;
 	border-radius: 20px;
 	margin-top: 20px;
+	padding-bottom: 500px;
 }
 
 .header {
@@ -79,4 +80,8 @@ table {
 th {
 	border: 1px solid black;
 	width: 50%;
+}
+
+.adminChanges form {
+	margin-top: 20px;
 }
