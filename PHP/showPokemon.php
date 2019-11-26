@@ -72,11 +72,16 @@
 					<div class="header">
 						<h1 id="pkName"><?php print $pkData['Name'] ?></h1>
 						<?php 
-							if (checkIfFavorite($dbh, $pkData['PKID'])) {
-								print "<h1 class='fave' id='faved' onclick='unfavorite(this, " . $pkData['PKID'] . ")'>★</h1> ";
+							if (isset($_SESSION['VALID']) && 1 == $_SESSION['VALID']) {
+								if (checkIfFavorite($dbh, $pkData['PKID'])) {
+									print "<h1 class='fave' id='faved' onclick='unfavorite(this, " . $pkData['PKID'] . ")'>★</h1> ";
+								}
+								else {
+									print "<h1 class='fave' id='unfaved' onclick='favorite(this, " . $pkData['PKID'] . ")'>☆</h1>";
+								}
 							}
 							else {
-								print "<h1 class='fave' id='unfaved' onclick='favorite(this, " . $pkData['PKID'] . ")'>☆</h1>";
+								print "<h1 class='fave' id='unfaved'><a href='showLogin.php'>☆</a></h1>";
 							}
 						?>
 					</div>
