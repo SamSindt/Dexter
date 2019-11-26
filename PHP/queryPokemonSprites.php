@@ -12,16 +12,18 @@
 							  FROM PokemonSprites
 							  WHERE SID = " . $id);
 		
-	  $sth->execute();
+		$sth->execute();
 	  
-	  $row = $sth->fetch();
+		$row = $sth->fetch();
 		$data = $row['Image'];
 		$type = $row['Type'];
-	  Header( "Content-type: $type");
-	  print $data;
+		Header( "Content-type: $type");
+		print $data;
 	  
-	}else{
+	}
+	else{
 	   print "FILE NOT FOUND";
 	}
-  db_close($dbh);
+	
+	db_close($dbh);
 ?>

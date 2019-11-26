@@ -1,8 +1,7 @@
 <?php
 	require_once('basicErrorHandling.php');
 
-	function getTypeImageIDByPokemon($dbh, $pokemonID)
-	{
+	function getTypeImageIDByPokemon($dbh, $pokemonID) {
 		$rows = array();
 
 		$sth = $dbh -> prepare("SELECT TypeImageID

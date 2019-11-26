@@ -2,8 +2,7 @@
 
 	require_once ('basicErrorHandling.php');
 	
-	function queryGetUserInfo($dbh)
-	{
+	function queryGetUserInfo($dbh) {
 		$rows = array();
 		
 		$sth = $dbh -> prepare("SELECT UID, UserName FROM Users
@@ -11,8 +10,7 @@
 		
 		$sth -> execute();
 		
-		while ($row = $sth -> fetch())
-		{
+		while ($row = $sth -> fetch()) {
 			$rows[] = $row;
 		}
 		

@@ -2,8 +2,8 @@
 
 	require_once (__DIR__ . '/basicErrorHandling.php');
 	require_once (__DIR__ . '/connDB.php');
-	require_once ('checkUserAuth.php');
-	require_once ('queryGetUserInfo.php');
+	require_once (__DIR__ . '/checkUserAuth.php');
+	require_once (__DIR__ . '/queryGetUserInfo.php');
 	
 	checkUserAuth();
 	
@@ -28,10 +28,8 @@
 				<ul class="nav">
 					<li class="navItem">
 						<?php 
-							if (isset($_SESSION['isAdmin']))
-							{
-								if (TRUE == $_SESSION['isAdmin'])
-								{
+							if (isset($_SESSION['isAdmin'])) {
+								if (TRUE == $_SESSION['isAdmin']) {
 									print "<a href='showAdminPage.php'>Admin</a>";
 								}
 							}
@@ -63,8 +61,7 @@
 					<tr><th>UserID</th><th>UserName</th></tr>
 					<?php 
 						$userData = queryGetUserInfo($dbh);
-						foreach ($userData as $row)
-						{
+						foreach ($userData as $row) {
 							print "<tr><th>" . $row[0] . "</th><th>" . $row[1] . "</th></tr>";
 						}
 					?>
