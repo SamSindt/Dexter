@@ -2,8 +2,7 @@
 
 	require_once ('queryGetSalt.php');
 	
-	function queryValidateUser($dbh, $user, $passwd)
-	{
+	function queryValidateUser($dbh, $user, $passwd) {
 		$retVal = FALSE;
 		$salt = queryGetSalt($dbh, $user);
 		
@@ -16,13 +15,11 @@
 		$sth->bindValue(":pass", $hashedPW);
 		$sth->execute();
 	
-		if (1 == $sth -> rowCount())
-		{
+		if (1 == $sth -> rowCount()) {
 			print "Good User";
 			$retVal = TRUE;
 		}
-		else
-		{
+		else {
 			print "Bad user\n";
 		}
 		return $retVal;

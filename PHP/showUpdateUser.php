@@ -2,14 +2,12 @@
 
 	require_once (__DIR__ . '/basicErrorHandling.php');
 	require_once (__DIR__ . '/connDB.php');
-	require_once ('queryUpdateUser.php');
-	require_once ('checkUserAuth.php');
+	require_once (__DIR__ . '/queryUpdateUser.php');
+	require_once (__DIR__ . '/checkUserAuth.php');
 	
 	checkUserAuth();
 	
-	if (isset($_POST['txtUserID']) && 
-			TRUE == $_SESSION['isAdmin'])
-	{
+	if (isset($_POST['txtUserID']) &&  TRUE == $_SESSION['isAdmin']) {
 		$userID = $_POST['txtUserID'];
 	
 		$dbh = db_connect_w();
@@ -20,8 +18,7 @@
 		
 		header('Location: showAdminPage.php');
 	}
-	else
-	{
+	else {
 		header('Location: showPokemonSearch.php');
 	}
 

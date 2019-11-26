@@ -45,10 +45,8 @@
 				<ul class="nav">
 					<li class="navItem">
 						<?php 
-							if (isset($_SESSION['isAdmin']))
-							{
-								if (TRUE == $_SESSION['isAdmin'])
-								{
+							if (isset($_SESSION['isAdmin'])) {
+								if (TRUE == $_SESSION['isAdmin']) {
 									print "<a href='showAdminPage.php'>Admin</a>";
 								}
 							}
@@ -170,8 +168,7 @@
 			
 							$colorData = getUnusedColors($dbh, $pkData['PKID']);
 							
-							foreach ( $colorData as $row )
-							{
+							foreach ( $colorData as $row ) {
 								print '<option value=' . $row[0] . '> ' . $row[1] . '</option>';
 							}
 				

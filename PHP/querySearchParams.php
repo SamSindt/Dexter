@@ -5,9 +5,9 @@
 	function getLowestPKID ($dbh) {
 
 		$sth = $dbh -> prepare("SELECT Pokemon.PKID 
-														FROM Pokemon
-														ORDER BY Pokemon.PKID ASC
-														LIMIT 1");
+								FROM Pokemon
+								ORDER BY Pokemon.PKID ASC
+								LIMIT 1");
 		$sth -> execute();
 
 		return ($sth -> fetch())['PKID'];
@@ -17,9 +17,9 @@
 	function getHighestPKID ($dbh) {
 
 		$sth = $dbh -> prepare("SELECT Pokemon.PKID 
-														FROM Pokemon
-														ORDER BY Pokemon.PKID DESC
-														LIMIT 1");
+								FROM Pokemon
+								ORDER BY Pokemon.PKID DESC
+								LIMIT 1");
 		$sth -> execute();
 
 		return ($sth -> fetch())['PKID'];
@@ -30,11 +30,10 @@
 		$rows = array();
 
 		$sth = $dbh -> prepare("SELECT ColorID, ColorName 
-														FROM Colors");
+								FROM Colors");
 		$sth -> execute();
 		
-		while ($row = $sth -> fetch())
-		{
+		while ($row = $sth -> fetch()) {
 			$rows[] = $row;
 		}
 
@@ -46,11 +45,10 @@
 		$rows = array();
 
 		$sth = $dbh -> prepare("SELECT TypeID, TypeName 
-														FROM Types");
+								FROM Types");
 		$sth -> execute();
 		
-		while ($row = $sth -> fetch())
-		{
+		while ($row = $sth -> fetch()) {
 			$rows[] = $row;
 		}
 
@@ -62,11 +60,10 @@
 		$rows = array();
 
 		$sth = $dbh -> prepare("SELECT EggGroupID, GroupName 
-														FROM EggGroups");
+								FROM EggGroups");
 		$sth -> execute();
 		
-		while ($row = $sth -> fetch())
-		{
+		while ($row = $sth -> fetch()) {
 			$rows[] = $row;
 		}
 
@@ -78,11 +75,10 @@
 		$rows = array();
 
 		$sth = $dbh -> prepare("SELECT AnalogID, AnalogName 
-														FROM Analogs");
+								FROM Analogs");
 		$sth -> execute();
 		
-		while ($row = $sth -> fetch())
-		{
+		while ($row = $sth -> fetch()) {
 			$rows[] = $row;
 		}
 

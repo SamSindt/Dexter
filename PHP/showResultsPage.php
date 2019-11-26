@@ -4,7 +4,7 @@
     require_once (__DIR__ . '/connDB.php');
 	require_once (__DIR__ . '/queryPokemon.php');
 	
-	 session_start();
+	session_start();
 
     $dbh = db_connect_ro();
 ?>
@@ -26,10 +26,8 @@
 			<ul class="nav">
 					<li class="navItem">
 						<?php 
-							if (isset($_SESSION['isAdmin']))
-							{
-								if (TRUE == $_SESSION['isAdmin'])
-								{
+							if (isset($_SESSION['isAdmin'])) {
+								if (TRUE == $_SESSION['isAdmin']) {
 									print "<a href='showAdminPage.php'>Admin</a>";
 								}
 							}

@@ -1,7 +1,7 @@
 <?php
- 	require_once __DIR__ . '/basicErrorHandling.php';
-	require_once __DIR__ . '/connDB.php';
-	require_once __DIR__ . '/querySearchParams.php';
+ 	require_once (__DIR__ . '/basicErrorHandling.php');
+	require_once (__DIR__ . '/connDB.php');
+	require_once (__DIR__ . '/querySearchParams.php');
 	
 	session_start();
 
@@ -27,10 +27,8 @@
 				<ul class="nav">
 					<li class="navItem">
 						<?php 
-							if (isset($_SESSION['isAdmin']))
-							{
-								if (TRUE == $_SESSION['isAdmin'])
-								{
+							if (isset($_SESSION['isAdmin'])) {
+								if (TRUE == $_SESSION['isAdmin']) {
 									print "<a href='showAdminPage.php'>Admin</a>";
 								}
 							}
@@ -76,8 +74,7 @@
 					<?php
 						$data = getTypes($dbh);
 						
-						foreach ( $data as $row )
-						{
+						foreach ( $data as $row ) {
 							print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
 						}
 					?>
@@ -90,8 +87,7 @@
 					<?php
 						$data = getAnalogs($dbh);
 						
-						foreach ( $data as $row )
-						{
+						foreach ( $data as $row ) {
 							print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
 						}
 					?>
@@ -105,8 +101,7 @@
 					<?php
 						$data = getColors($dbh);
 						
-						foreach ( $data as $row )
-						{
+						foreach ( $data as $row ) {
 							print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
 						}
 					?>
@@ -119,8 +114,7 @@
 					<?php
 						$data = getEggGroups($dbh);
 						
-						foreach ( $data as $row )
-						{
+						foreach ( $data as $row ) {
 							print '<option VALUE=' . $row[0] . '> ' . $row[1] . '</option>';
 						}
 					?>

@@ -29,10 +29,8 @@
 				<ul class="nav">
 					<li class="navItem">
 						<?php 
-							if (isset($_SESSION['isAdmin']))
-							{
-								if (TRUE == $_SESSION['isAdmin'])
-								{
+							if (isset($_SESSION['isAdmin'])) {
+								if (TRUE == $_SESSION['isAdmin']) {
 									print "<a href='showAdminPage.php'>Admin</a>";
 								}
 							}

@@ -6,7 +6,6 @@
 		$sth = $dbh -> prepare("SELECT *
                                 FROM Pokemon 
                                 WHERE PKID =" . $pkid );
-		// run the query
 		$sth -> execute();
 
 		return $sth -> fetch();
@@ -21,7 +20,7 @@
 		if (!empty ($searchParams)) {
 			$sqlWhere = "";
 			
-			
+		
 			//PKID
 			if (isset ($searchParams['PKID']) && !empty($searchParams['PKID'])) {
 				$sqlWhere .= "Pokemon.PKID = " . $searchParams['PKID']; 

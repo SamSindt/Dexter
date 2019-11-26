@@ -3,20 +3,15 @@
 	require_once ('basicErrorHandling.php');
 	session_start();
 
-	if( (isset($_POST['user']) &&
-		isset($_POST['pass'])))
-	{
-  	$user = $_POST['user'];
+	if( (isset($_POST['user']) && isset($_POST['pass']))) {
+		$user = $_POST['user'];
 		$passwd = $_POST['pass'];
 		
-		// http://stackoverflow.com/questions/853813/how-to-create-a-random-string-using-php
-		// quick and very dirty.
 		$salt = substr(hash("sha256",rand()), 0, 20);
 		
 		$dbh=db_connect_w();
-		
-		try
-  	{
+	
+		try {
 			$sth = $dbh->prepare("INSERT INTO Users (UserName, Password, Salt) 
 			VALUES (:UserName,:Password,:Salt)");
 		
@@ -29,19 +24,17 @@
 		
 			$sth->execute();
 		}
-		catch (PDOException $e)
-   {
-     printf ("The statement failed.\n");
-     printf ("getCode: ". $e->getCode () . "\n");
-     printf ("getMessage: ". $e->getMessage () . "\n");
-   } 
+		catch (PDOException $e)  {
+			printf ("The statement failed.\n");
+			printf ("getCode: ". $e->getCode () . "\n");
+			printf ("getMessage: ". $e->getMessage () . "\n");
+		} 
 		
 		db_close($dbh);
 		print "User " . $user ." added";
 	}
-	else 
-	{
-		print "No user to be added";
+	else {
+	    print "No user to be added";
 	}
 ?>
 
@@ -49,10 +42,10 @@
 <html lang="en-us">
 
 	<head>
-	<meta http-equiv = "refresh" content = "1; url = ./showLogin.php" />
+	<meta http-equiv = "refresh" content = "0; url = ./showAddUser.php">
 	</head>
 	<body>
-	<br/>	
+	<br>	
 	</body>
 
-</html>
+</html>	
