@@ -37,6 +37,11 @@
 	color: yellow;
 }
 
+#unfaved a {
+	color:inherit;
+	text-decoration: none;
+}
+
 #numAndTypes {
 	display: grid;
 	grid-template-columns: 50% 50%;
