@@ -16,11 +16,7 @@
 		$sth->execute();
 	
 		if (1 == $sth -> rowCount()) {
-			print "Good User";
 			$retVal = TRUE;
-		}
-		else {
-			print "Bad user\n";
 		}
 		return $retVal;
 	}

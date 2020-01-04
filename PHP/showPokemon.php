@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	require_once (__DIR__ . '/basicErrorHandling.php');
     require_once (__DIR__ . '/connDB.php');
     require_once (__DIR__ . '/queryPokemon.php');
@@ -19,7 +19,7 @@
 		header("Location: showPokemonSearch.php");
 	}
 		
-    //session_start();
+    
 
     $dbh = db_connect_ro();
 	
