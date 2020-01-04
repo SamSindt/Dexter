@@ -19,7 +19,7 @@
 		header("Location: showPokemonSearch.php");
 	}
 		
-    session_start();
+    //session_start();
 
     $dbh = db_connect_ro();
 	
