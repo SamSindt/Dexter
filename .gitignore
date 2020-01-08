@@ -9,3 +9,6 @@
 
 # codelite project files
 *.phprj
+
+# dump file is too big for GitHub
+*dbState.sql

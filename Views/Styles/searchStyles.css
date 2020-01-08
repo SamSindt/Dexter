@@ -1,0 +1,32 @@
+.results {
+	
+	grid-row-start: 2;
+	display: grid;
+	grid-template-columns: auto 600px auto;
+}
+
+.results h1 {
+	grid-column-start: 2;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.results ul {
+	grid-column-start: 2;
+	display: block;
+	height: 80vh;
+	overflow: auto;
+	list-style: none;
+}
+
+.results li {
+	height: 44px;
+}
+
+.results li:nth-child(odd) {
+	background-color: white;
+}
+
+.results img {
+	vertical-align: middle;
+}
