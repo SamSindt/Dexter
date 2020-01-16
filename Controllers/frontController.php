@@ -3,6 +3,7 @@
     require_once __DIR__ . "/homeController.php";
     require_once __DIR__ . "/searchController.php";
     require_once __DIR__ . "/profileController.php";
+    require_once __DIR__ . "/loginController.php";
 
     class FrontController implements FrontControllerInterface {
         protected $controller = 'HomeController';
@@ -15,15 +16,15 @@
                 $this->parseUri();
             }
             else {
-                if (isset($option['controller'])) {
+                if (isset($options['controller'])) {
                     $this->setController($options['controller']);
                 }
 
-                if (isset($option['action'])) {
+                if (isset($options['action'])) {
                     $this->setAction($options['action']);
                 }
 
-                if (isset($option['params'])) {
+                if (isset($options['params'])) {
                     $this->setParams($options['params']);
                 }
             }

@@ -4,12 +4,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Home</title>
-		<style>
+		<!--<style>
             <?php
-                include __DIR__ . "/../Styles/navigationStyles.css";
-                include __DIR__ . "/../Styles/homeStyles.css";
+                /*include __DIR__ . "/../Styles/navigationStyles.css";
+                include __DIR__ . "/../Styles/homeStyles.css";*/
             ?>
-        </style>
+        </style>-->
 	</head>
 
 	<body>
