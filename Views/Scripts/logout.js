@@ -1,11 +1,12 @@
-function logout (element) {
+document.getElementById("logout").addEventListener ("click", function () {
 	var login = document.createElement("a");
-	login.setAttribute ("href", "showLogin.php");
+	login.setAttribute ("href", "/Pokedex/login/show");
+	login.setAttribute ("id", "login");
 	login.innerHTML = "Login";
-	element.parentNode.replaceChild(login, element);
+	this.parentNode.replaceChild(login, this);
 	
 	$.ajax({
 		type: 'POST',
-		url: 'logoutSession.php',
+		url: '/Pokedex/logout/submit',
 	});
-}
+});

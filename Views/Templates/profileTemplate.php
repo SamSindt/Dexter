@@ -9,6 +9,7 @@
                 include __DIR__ . "/../Styles/profileStyles.css";
 			print "</style>";
 		?>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
 
 		<body>
@@ -18,7 +19,16 @@
 					<li class="navItem"><!--Admin--></li>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
 					<li class="navItem"><a href=#><!--Favorites--></a></li>
-					<li class="navItem"><a href="/Pokedex/login/show">Login</a></li>
+					<li class="navItem">
+						<?php
+							if ($isLoggedIn) {
+								print '<a href="#" id="logout">Logout</a>';
+							}
+							else {
+								print '<a href="/Pokedex/login/show" id="login">Login</a>';
+							}
+						?>
+					</li>
 				</ul>
 			</div>
 			
@@ -106,5 +116,10 @@
 				
 			</div>
 		</di>
-    </body>
+	</body>
+	<?php 
+		print "<script>";
+		include __DIR__ . "/../Scripts/logout.js";
+		print "</script>";
+	?>
 </html>

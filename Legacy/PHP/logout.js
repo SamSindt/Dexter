@@ -6,6 +6,6 @@ function logout (element) {
 	
 	$.ajax({
 		type: 'POST',
-		url: 'logoutSession.php',
+		url: '/Pokedex/logout/submit',
 	});
 }

@@ -5,6 +5,7 @@
     require_once __DIR__ . "/profileController.php";
     require_once __DIR__ . "/loginController.php";
     require_once __DIR__ . "/usercreationController.php";
+    require_once __DIR__ . "/logoutController.php";
 
     class FrontController implements FrontControllerInterface {
         protected $controller = 'HomeController';

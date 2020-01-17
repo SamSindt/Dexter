@@ -1,23 +1,27 @@
 <?php
     require_once __DIR__ . "/viewInterface.php";
+    require_once __DIR__ . "/../Models/userStatusModel.php";
 
     class HomeView implements ViewInterface {
-        private $model;
-        private $controller;
+        private $homeModel;
+        private $userModel;
 
         public function __construct($model, $controller) {
-            $this->model = $model;
-            $this->controller = $controller;
+            $this->homeModel = $model;
+            $this->userModel = new UserStatusModel ();
         }
 
         public function output() {
 
-            $lowestPKID = $this->model->lowestPKID;
-            $highestPKID = $this->model->highestPKID;
-            $types = $this->model->types;
-            $analogs = $this->model->analogs;
-            $colors = $this->model->colors;
-            $eggGroups = $this->model->eggGroups;
+            $lowestPKID = $this->homeModel->lowestPKID;
+            $highestPKID = $this->homeModel->highestPKID;
+            $types = $this->homeModel->types;
+            $analogs = $this->homeModel->analogs;
+            $colors = $this->homeModel->colors;
+            $eggGroups = $this->homeModel->eggGroups;
+            $isLoggedIn = $this->userModel->isLoggedIn;
+            $isAdmin = $this->userModel->isAdmin;
+
             require_once __DIR__ . "/Templates/homeTemplate.php";
 
         }
