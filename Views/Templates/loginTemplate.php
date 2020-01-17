@@ -24,7 +24,7 @@
 			<div class="inner">
 				<h1>Login</h1>
 				
-				<form method="post" name="formLogin" action="userAuth.php">
+				<form method="post" name="formLogin" action="/Pokedex/login/submit">
 					<div class="item">Username:<input name="txtUser" size="15" type="text"><br></div>
 					<div class="item">Password:<input name="txtPassword" size="15" type="password"><br></div>
 					
