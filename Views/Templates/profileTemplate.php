@@ -2,15 +2,14 @@
 <html lang="en-us">
     <head>
 		<meta charset="utf-8">
-		<link href="showPokemonStyles.css" rel="stylesheet">
-        <style>
-            <?php
+		<title><?php $pokemonName?></title>
+		<?php
+			print "<style>";
                 include __DIR__ . "/../Styles/navigationStyles.css";
                 include __DIR__ . "/../Styles/profileStyles.css";
-            ?>
-        </style>
-        <title><?php $pokemonName?></title>
-    <head>
+			print "</style>";
+		?>
+    </head>
 
 		<body>
 			<div class="topBar">

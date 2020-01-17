@@ -2,13 +2,14 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<style>
-            <?php
-                include __DIR__ . "/../Styles/navigationStyles.css";
-                include __DIR__ . "/../Styles/loginStyles.css";
-            ?>
-        </style>
 		<title>Login Screen</title>
+		<?php
+			print "<style>";
+			include __DIR__ . "/../Styles/navigationStyles.css";
+			include __DIR__ . "/../Styles/loginStyles.css";
+			print "</style";
+		?>
+		
 	</head>
 	
 	<body>

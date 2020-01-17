@@ -2,13 +2,13 @@
 <html lang="en-us">
     <head>
 		<meta charset="utf-8">
-        <style>
-            <?php
-                include __DIR__ . "/../Styles/navigationStyles.css";
-                include __DIR__ . "/../Styles/searchStyles.css";
-            ?>
-        </style>
 		<title>Search Results</title>
+		<?php
+			print "<style>";
+			include __DIR__ . "/../Styles/navigationStyles.css";
+			include __DIR__ . "/../Styles/searchStyles.css";
+			print "</style>";
+		?>
 	</head>
 		
 	<body>

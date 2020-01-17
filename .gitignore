@@ -9,9 +9,6 @@
 
 # codelite project files
 *.phprj
-<<<<<<< HEAD
 
 # dump file is too big for GitHub
 *dbState.sql
-=======
->>>>>>> f0cb158e8c75d18a13b3a7f06367e7f9e8749e9c
