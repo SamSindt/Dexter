@@ -21,7 +21,7 @@
 					</li>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
 					<li class="navItem"><a href=#><!--Favorites--></a></li>
-					<li class="navItem"><!--Login--></li>
+					<li class="navItem"><a href="/Pokedex/login/show">Login</a></li>
 				</ul>
 			</div>
 		</div>

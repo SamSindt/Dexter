@@ -16,7 +16,7 @@
 		<div class="topBar">
 			<div class="title"><b>Pokedex</b></div>
 			<ul class="nav">
-				<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
+				<li class="navItem"><a href="/Pokedex/home">Home</a></li>
 			</ul>
 		</div>
 		
@@ -30,7 +30,7 @@
 					
 					<input class="item" id="submit" TYPE="submit" NAME="btnLogin" VALUE="Login">
 				</form>
-				<a href="showAddUser.php">Create an Account</a>
+				<a href="/Pokedex/Usercreation/show/">Create an Account</a>
 			</div>
 		</div>
 	</body>
