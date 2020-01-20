@@ -48,11 +48,19 @@
                     $spriteIterator = new ArrayIterator($spritesArray);
                     foreach ($pokemonArray as $pokemon) {
                         
-                        print "<li><img src='data:" . $spriteIterator->current()["Type"] . ";base64, " . base64_encode($spriteIterator->current()["Image"]) . "'><a href='/Pokedex/Profile/Show/" . $pokemon['PKID'] . "/'>" . $pokemon['Name'] . "</a></li>";
+						print "<li><img src='data:" . $spriteIterator->current()["Type"]
+						 . ";base64, " . base64_encode($spriteIterator->current()["Image"])
+						 . "'><a href='/Pokedex/Profile/Show/" . $pokemon['PKID'] . "/'>" . $pokemon['Name'] . "</a><button class='unfavorite' id='"
+						 . $pokemon['PKID'] . "'>X</button></li>";
                         $spriteIterator->next();
                     }
 				?>
 			</ul>
 		</div>
 	</body>
+	<?php
+		print "<script>";
+		include __DIR__ . "/../Scripts/unfavoriteList.js";
+		print "addUnfavoriteListeners ();</script>";
+	?>
 </html>
