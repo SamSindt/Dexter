@@ -6,7 +6,9 @@
         public $isAdmin;
 
         public function __construct() {
-            session_start();
+            if(!isset($_SESSION)) { 
+                session_start(); 
+            } 
             $this->isLoggedIn = $this->getLoginStatus ();
             $this->isAdmin = $this->getAdminStatus();
         }

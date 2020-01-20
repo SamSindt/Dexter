@@ -1,0 +1,9 @@
+.results form {
+	display: inline;
+}
+
+.close {
+	margin-top: 8px;
+	margin-right: 4px;
+	float: right;
+}

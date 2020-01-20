@@ -21,7 +21,16 @@
 					<li class="navItem"><!--Admin-->
 					</li>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
-					<li class="navItem"><a href=#><!--Favorites--></a></li>
+					<li class="navItem">
+						<?php
+							if ($isLoggedIn) {
+								print '<a id="favorites" href="/Pokedex/favorites/show">Favorites</a>';
+							}
+							else {
+								print '<a id="favorites" href="/Pokedex/login/show" id="login">Favorites</a>';
+							}
+						?>
+					</li>
 					<li class="navItem">
 						<?php
 							if ($isLoggedIn) {

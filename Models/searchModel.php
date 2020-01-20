@@ -23,7 +23,6 @@
         
             $sqlWhere = "";
             
-        
             //PKID
             if ($this::EMPTY != $pokemonID) {
                 $sqlWhere .= "Pokemon.PKID = " . $pokemonID; 
@@ -136,7 +135,6 @@
 
         }
         
-
         private function getSprites($dbh) {
             $rows = array();
             foreach ($this->pokemonArray as $pokemon) {
