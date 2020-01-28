@@ -30,4 +30,20 @@
                 
 	        }
         }
+
+        public function favorite ($pokemonID) {
+            
+            if(!isset($_SESSION)) { 
+                session_start(); 
+            } 
+
+            if(isset($_SESSION['userID'])) {
+                $dbh = db_connect_w();
+                
+                $sth = $dbh->prepare("INSERT INTO HasFavorite (UID, PKID)
+                                      VALUES (" . $_SESSION['userID'] . ", " . $pokemonID . ")");
+                $sth->execute();
+                db_close($dbh);
+            }
+        }
     }

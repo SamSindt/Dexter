@@ -16,6 +16,7 @@
         public $eggGroups = array();
         public $typeImages = array();
         public $profileImage = array();
+        public $bIsFavorited;
 
         public function __construct($pokemonID) {
             $dbh = db_connect_ro();
@@ -35,6 +36,7 @@
             $this->speed = $pokemonData["Speed"];
             $this->typeImages = $this->getTypeImage($dbh, $pokemonID);
             $this->profileImage = $this->getProfileImage($dbh, $pokemonID);
+            $this->isFavorited = $this->checkIfFavorite($dbh, $pokemonID);
 
             db_close($dbh);
         }
@@ -82,7 +84,6 @@
                 $rows[] = $row;
             }
             return $rows;
-        
         }
 
         private function getProfileImage($dbh, $pokemonID) {
@@ -96,6 +97,32 @@
 	  
             return $sth->fetch();
             
+        }
+
+        private function checkIfFavorite ($dbh, $pokemonID) {
+		
+            $bFlag = false;
+
+            if(!isset($_SESSION)) { 
+                session_start(); 
+            }
+            
+            if (isset ($_SESSION['userID'])) {
+                $sth = $dbh -> prepare("SELECT *
+                                        FROM HasFavorite, Pokemon  
+                                        WHERE UID = " . $_SESSION['userID']
+                                        . " AND HasFavorite.PKID = " . $pokemonID);
+            
+                $sth -> execute();
+                
+                $result = $sth -> fetch();
+                
+                if ($result) {
+                    $bFlag = true;
+                }
+            }
+
+            return $bFlag;
         }
 
     }

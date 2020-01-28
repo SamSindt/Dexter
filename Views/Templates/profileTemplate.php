@@ -44,7 +44,21 @@
 			<div class="wrapper">
 				<div class="card">
 					<div class="header">
-						<h1 id="pkName"><?php $pokemonName ?></h1><!--Favoriting--></div>
+						<h1 id="pkName"><?php print $pokemonName ?></h1><!--Favoriting-->
+						<?php 
+							if ($isLoggedIn) {
+								if ($isFavorited) {
+									print "<h1 class='fave' id='faved'>★</h1> ";
+								}
+								else {
+									print "<h1 class='fave' id='unfaved'>☆</h1>";
+								}
+							}
+							else {
+								print "<h1 class='fave' id='unfaved'><a href='showLogin.php'>☆</a></h1>";
+							}
+						?>
+						</div>
 					
 					<img src=<?php print "'data:" . $profileImage["Type"] . ";base64, " . base64_encode($profileImage["Image"]) ."'";?> id="pkImage";></br>
 					
@@ -128,7 +142,15 @@
 	</body>
 	<?php 
 		print "<script>";
+		include __DIR__ . "/../Scripts/profileFavoriting.js";
 		include __DIR__ . "/../Scripts/logout.js";
+		if ($isFavorited) {
+			print "addUnfavoriteListener(" . $pokemonID . ");";
+		}
+		else {
+			print "addFavoriteListener(" . $pokemonID . ");";
+		}
+
 		print "</script>";
 	?>
 </html>

@@ -27,6 +27,7 @@
             $eggGroups = $this->profileModel->eggGroups;
             $typeImages = $this->profileModel->typeImages;
             $profileImage = $this->profileModel->profileImage;
+            $isFavorited = $this->profileModel->isFavorited;
             $isLoggedIn = $this->userModel->isLoggedIn;
             $isAdmin = $this->userModel->isAdmin;
             require_once __DIR__ . "/Templates/profileTemplate.php";
