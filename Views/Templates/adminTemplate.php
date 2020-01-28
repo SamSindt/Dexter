@@ -16,15 +16,7 @@
 			<div class="topBar">
 				<div class="title"><b>Pokedex</b></div>
 				<ul class="nav">
-					<li class="navItem">
-						<?php /*
-							if (isset($_SESSION['isAdmin'])) {
-								if (TRUE == $_SESSION['isAdmin']) {
-									print "<a href='showAdminPage.php'>Admin</a>";
-								}
-							}
-						*/ ?>
-					</li>
+					<li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>
                     <li class="navItem"><a href="/Pokedex/home">Home</a></li>
                     <li class="navItem">
                     <?php
@@ -49,10 +41,11 @@
 				</ul>
 			</div>
 			<div class="wrapper">
-                <ul>
+                <h1 id="title">Users</h1>
+                <ul id="list">
                 <?php
                     foreach ($users as $user) {
-                        print "<li>" . $user['UserName'] . "</li>";
+                        print "<li>" . $user['UserName'] . "<button >Make Admin</button><button>Deactive</button></li>";
                     }
                 ?>
                 </ul>
