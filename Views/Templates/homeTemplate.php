@@ -18,6 +18,11 @@
 		<div class="topBar">
 			<div class="title"><b>Pokedex</b></div>
 				<ul class="nav">
+					<?php 
+						if ($isAdmin) {
+							print '<li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+						}
+					?>
 					<li class="navItem"><!--Admin-->
 					</li>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
@@ -57,9 +62,8 @@
 		
 
 			<div class="formField">ID:
-				<input TYPE="number" NAME="PKID"
 					<?php
-						print " MIN=\"" . $lowestPKID . "\" MAX=\"" . $highestPKID . "\">";
+						print '<input TYPE="number" NAME="PKID" MIN=\"" . $lowestPKID . "\" MAX=\"" . $highestPKID . "\">';
 					?>
 			</div>
 			
