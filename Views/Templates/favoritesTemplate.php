@@ -23,16 +23,7 @@
 						}
 					?>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
-					<li class="navItem">
-						<?php
-							if ($isLoggedIn) {
-								print '<a href="#" id="logout">Logout</a>';
-							}
-							else {
-								print '<a href="/Pokedex/login/show" id="login">Login</a>';
-							}
-						?>
-					</li>
+					<li class="navItem"><a id="logout" href="#">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -57,6 +48,7 @@
 	<?php
 		print "<script>";
 		include __DIR__ . "/../Scripts/unfavoriteList.js";
-		print "addUnfavoriteListeners ();</script>";
+		include __DIR__ . "/../Scripts/logout.js";
+		print "addUnfavoriteListeners (); addLogoutAndRedirectListener ();</script>";
 	?>
 </html>

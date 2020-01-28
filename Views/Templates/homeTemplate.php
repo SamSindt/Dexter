@@ -121,6 +121,6 @@
 	<?php 
 		print "<script>";
 		include __DIR__ . "/../Scripts/logout.js";
-		print "</script>";
+		print "addLogoutAndStayListener ();</script>";
 	?>
 </html>

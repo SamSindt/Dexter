@@ -10,8 +10,12 @@
 
 #list {
     grid-column-start: 2;
+    display: block;
+	height: 80vh;
+	overflow: auto;
+	list-style: none;
 }
 
 #list button {
     float: right;
-}
+}   
