@@ -4,8 +4,8 @@
 
     class UsercreationController {
 
-        public function show () {
-            $view = new UsercreationView ();
+        public function show ($flag = 0) {
+            $view = new UsercreationView ($flag);
             $view->output ();
         }
 
@@ -19,8 +19,7 @@
                 $dbh=db_connect_w();
 
                 if ($this->userAlreadyExists ($dbh, $userName)) {
-                    //print message on screen;
-                    print "test";
+                    header ("Location: /Pokedex/usercreation/show/1");
                 }
                 else {
                     $sth = $dbh->prepare("INSERT INTO Users (UserName, Password, Salt) 

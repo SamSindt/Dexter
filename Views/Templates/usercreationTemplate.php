@@ -31,8 +31,12 @@
 					<input class="item" TYPE="submit" NAME="btnRegister" VALUE="Register">
 				
 				</form>
+				<?php
+					if (true == $userTakenFlag) {
+						print "<p>User Name is already taken. Try another.</p>";
+					}
+				?>
 			</div>
 		</div>
 	</body>
-
 </html>
