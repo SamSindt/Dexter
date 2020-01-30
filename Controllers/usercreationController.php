@@ -21,6 +21,9 @@
                 if ($this->userAlreadyExists ($dbh, $userName)) {
                     header ("Location: /Pokedex/usercreation/show/1");
                 }
+                else if ("" == trim ($userName)) {
+                    header ("Location: /Pokedex/usercreation/show/2");
+                }
                 else {
                     $sth = $dbh->prepare("INSERT INTO Users (UserName, Password, Salt) 
                     VALUES (:UserName,:Password,:Salt)");

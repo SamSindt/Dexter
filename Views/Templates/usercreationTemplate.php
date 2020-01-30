@@ -16,7 +16,7 @@
 	<div class="topBar">
 		<div class="title"><b>Pokedex</b></div>
 			<ul class="nav">
-				<li class="navItem"><a href="showPokemonSearch.php">Home</a></li>
+				<li class="navItem"><a href="/Pokedex/home">Home</a></li>
 			</ul>
 		</div>
 	</div>
@@ -34,6 +34,9 @@
 				<?php
 					if (true == $userTakenFlag) {
 						print "<p>User Name is already taken. Try another.</p>";
+					}
+					else if (true == $userWSFlag) {
+						print "<p>User Name must contain non-whitespace characters.</p>";
 					}
 				?>
 			</div>
