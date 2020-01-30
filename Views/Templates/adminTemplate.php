@@ -27,7 +27,7 @@
             <ul id="list">
             <?php
                 foreach ($users as $user) {
-                    print "<li>" . $user['UserName'] . "<button >Make Admin</button><button>Deactive</button></li>";
+                    print "<li>" . $user['UserName'] . "<button>Make Admin</button><button  class='deactivate' id='" . $user['UID'] . "'>Deactive</button></li>";
                 }
             ?>
             </ul>
@@ -36,6 +36,7 @@
     <?php
     print "<script>";
     include __DIR__ . "/../Scripts/logout.js";
-    print "addLogoutAndRedirectListener ();</script>";
+    include __DIR__ . "/../Scripts/adminPageListeners.js";
+    print "addLogoutAndRedirectListener (); addDeactivateListeners ();</script>";
     ?>
 </html>

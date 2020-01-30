@@ -52,5 +52,4 @@
             return 0 < $sth->rowCount ();
         }
     }
-
 ?>

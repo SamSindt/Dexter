@@ -1,8 +1,6 @@
 function addUnfavoriteListeners () {
     let unfavoriteButtons = document.getElementsByClassName("unfavorite");
 
-    
-
     for (let i = 0; i < unfavoriteButtons.length; i++) {
         let callback = function (element) {
             
