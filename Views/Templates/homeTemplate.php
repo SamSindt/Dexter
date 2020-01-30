@@ -20,7 +20,7 @@
 				<ul class="nav">
 					<?php 
 						if ($isAdmin) {
-							print '<li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+							print '<li id="admin" class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
 						}
 					?>
 					<li class="navItem"><!--Admin-->

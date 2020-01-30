@@ -4,8 +4,8 @@
 
     class LoginController {
 
-        public function show () {
-            $view = new LoginView ();
+        public function show ($flag = 0) {
+            $view = new LoginView ($flag);
             $view->output();
         }
 
@@ -20,9 +20,7 @@
                 
                 $dbh = db_connect_ro();
                         
-                $result = $this->validateUser($dbh, $userName, $password);
-                        
-                if ($result) {
+                if ($this->validateUser($dbh, $userName, $password)) {
                     $_SESSION['VALID'] = 1;
                     $_SESSION['userID'] = (int) $this->getUserID($dbh, $userName);
                     $_SESSION['isAdmin'] = $this->getAdminStatus($dbh, $userName);
@@ -30,7 +28,7 @@
                     header('Location: /Pokedex/home');
                 }
                 else {
-                    $this->show ();
+                    $this->show (1);
                 }
             }
         }

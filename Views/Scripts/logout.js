@@ -1,13 +1,18 @@
 function addLogoutAndStayListener () {
 
 	document.getElementById("logout").addEventListener ("click", function () {
-		var login = document.createElement("a");
+		let login = document.createElement("a");
 		login.setAttribute ("href", "/Pokedex/login/show");
 		login.setAttribute ("id", "login");
 		login.innerHTML = "Login";
 		this.parentNode.replaceChild(login, this);
 
 		document.getElementById("favorites").setAttribute ("href", "/Pokedex/login/show");
+
+		let adminElement = document.getElementById ("admin");
+		if (typeof(adminElement) != 'undefined' && adminElement != null) {
+			adminElement.parentNode.removeChild (adminElement);
+		}
 		
 		$.ajax({
 			type: 'POST',

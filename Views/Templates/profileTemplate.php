@@ -18,7 +18,7 @@
 				<ul class="nav">
 					<?php 
 						if ($isAdmin) {
-							print '<li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+							print '<li id="admin" class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
 						}
 					?>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
@@ -59,7 +59,7 @@
 								}
 							}
 							else {
-								print "<h1 class='fave' id='unfaved'><a href='showLogin.php'>☆</a></h1>";
+								print "<h1 class='fave' id='unfaved'><a href='/Pokedex/login/show'>☆</a></h1>";
 							}
 						?>
 						</div>
@@ -155,6 +155,6 @@
 			print "addFavoriteListener(" . $pokemonID . ");";
 		}
 
-		print "</script>";
+		print "addLogoutAndStayListener ();</script>";
 	?>
 </html>

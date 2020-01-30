@@ -18,7 +18,7 @@
 			<ul class="nav">
 				<?php 
 					if ($isAdmin) {
-						print '<li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+						print '<li id="admin" class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
 					}
 				?>
 				<li class="navItem"><a href="/Pokedex/home">Home</a></li>
@@ -62,6 +62,6 @@
 	<?php 
 		print "<script>";
 		include __DIR__ . "/../Scripts/logout.js";
-		print "</script>";
+		print "addLogoutAndStayListener ();</script>";
 	?>
 </html>
