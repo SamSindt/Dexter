@@ -18,3 +18,24 @@ function addDeactivateListeners () {
         });
     }
 }
+
+function addMakeAdminListeners () {
+    let makeAdminButtons = document.getElementsByClassName ("makeAdmin");
+
+    for (let i = 0; i < makeAdminButtons.length; i++) {
+        let callback = function (element) {
+            let id = element.getAttribute ("id");
+            let parentLi = element.parentNode;
+            parentLi.parentNode.removeChild(parentLi);
+
+            $.ajax({
+                type: "POST",
+                url: "/Pokedex/admin/makeadmin/" + id,
+            });
+        }
+
+        makeAdminButtons[i].addEventListener("click", function () {
+            callback (makeAdminButtons[i]);
+        });
+    }
+}

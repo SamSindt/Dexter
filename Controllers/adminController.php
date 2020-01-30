@@ -19,4 +19,13 @@
             $sth->execute();
             db_close($dbh);
         }
+
+        public function makeadmin ($userID) {
+            $dbh = db_connect_w();
+            $sth = $dbh->prepare("UPDATE Users SET Admin = 1
+                                  WHERE UID = :UserIDNum");
+            $sth->bindValue(":UserIDNum", $userID);
+            $sth->execute();
+            db_close($dbh);
+        }
     }
