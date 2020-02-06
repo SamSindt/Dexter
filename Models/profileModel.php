@@ -96,7 +96,6 @@
 		    $sth->execute();
 	  
             return $sth->fetch();
-            
         }
 
         private function checkIfFavorite ($dbh, $pokemonID) {

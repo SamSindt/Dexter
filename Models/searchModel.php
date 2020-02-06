@@ -132,7 +132,6 @@
            
             return $rows;
 
-
         }
         
         private function getSprites($dbh) {
@@ -143,9 +142,8 @@
                                     WHERE SID = " . $pokemon["PKID"]);
                 $sth->execute();
                 $rows[] = $sth -> fetch ();
-
             }
-            
+
             return $rows;
         }
     }

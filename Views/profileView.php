@@ -1,14 +1,22 @@
 <?php
     require_once __DIR__ . "/viewInterface.php";
     require_once __DIR__ . "/../Models/userStatusModel.php";
+    require_once __DIR__ . "/../Models/adminUpdateProfileModel.php";
 
     class ProfileView implements ViewInterface {
         private $profileModel;
         private $userModel;
+        private $adminUpdateProfileModel;
 
         public function __construct($model, $controller) {
             $this->profileModel = $model;
             $this->userModel = new UserStatusModel ();
+            if ($this->userModel->isAdmin) {
+                $this->adminUpdateProfileModel = new AdminUpdateProfileModel($this->profileModel->pokemonID);
+            }
+            else {
+                $this->adminUpdateProfileModel = null;
+            }
         }
 
         public function output() {
@@ -30,6 +38,14 @@
             $isFavorited = $this->profileModel->isFavorited;
             $isLoggedIn = $this->userModel->isLoggedIn;
             $isAdmin = $this->userModel->isAdmin;
+            $unusedColors = array();
+            $unusedAnalog = array ();
+
+            if (null != $this->adminUpdateProfileModel) {
+                $unusedColors = $this->adminUpdateProfileModel->unusedColors;
+                $unusedAnalog = $this->adminUpdateProfileModel->unusedAnalogs;
+            }
+
             require_once __DIR__ . "/Templates/profileTemplate.php";
         }
     }

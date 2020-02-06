@@ -139,6 +139,30 @@
 					?>
 				</div>
 				<div class="adminChanges">
+						<?php
+							if($isAdmin) {
+
+								//Colors
+								print "<form method='post' action='addColor.php'><input type='hidden' name='pkid' value='" . $pokemonID . "'><select name='ColorID'>";
+
+								foreach ($unusedColors as $color) {
+									print '<option value=' . $color[0] . '> ' . $color[1] . '</option>';
+								}
+					
+								print "</select><input TYPE='submit' NAME='btn' VALUE='Add Color'></form>";
+								
+								//Anologs
+								print "<form method='post' action='addAnalog.php'>
+									<input type='hidden' name='pkid' value='" . $pokemonID . "'><select name='AnalogID'>";
+								
+								foreach ($unusedAnalogs as $analog) {
+									print "<option value=" . $analog . ">" . $analog . "</option>";
+								}
+								
+								print "</select><input TYPE='submit' NAME='btn' VALUE='Add Analog'></form>";
+									
+							}
+						?>
 				</div>
 				
 			</div>
