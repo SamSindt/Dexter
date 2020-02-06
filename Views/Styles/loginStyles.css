@@ -14,19 +14,13 @@ h1 {
 	justify-content: center;
 }
 
-.inner form {
+.inner {
 	display: grid;
 	justify-content: center;
+	text-align: center;
 }
 
 .inner form .item {
 	margin-bottom: 10px;
-}
-
-.inner a {
-	justify-self: center;
-}
-
-#submit {
-	justify-self: center;
+	text-align: center;
 }
