@@ -18,8 +18,13 @@
         private function search ($dbh, $pokemonID, $analogID, $namePart, $colorID, $typeID, $eggGroupID) {
             $sqlStatement = "SELECT Pokemon.PKID, Pokemon.Name ";
             $sqlFrom = "FROM Pokemon";
-            $bIsSecond = False;
-            $bUsingName = False;
+            $bIsSecond = false;
+            $bUsingName = false;
+            $bUsingID = false;
+            $bUsingAnalog = false;
+            $bUsingColor = false;
+            $bUsingEggGroup = false;
+            $bUsingType = false;
         
             $sqlWhere = "";
             
@@ -27,7 +32,8 @@
             if ($this::EMPTY != $pokemonID) {
                 $sqlWhere .= "Pokemon.PKID = :pokemonID";
                 
-                $bIsSecond = True;
+                $bIsSecond = true;
+                $bUsingID = true;
             }
             
             //Analog
@@ -38,12 +44,13 @@
                     $sqlWhere .= " AND ";
                 }
                 else {
-                    $bIsSecond = True;
+                    $bIsSecond = true;
                 }
                 
                 $sqlWhere .= "Analogs.AnalogID = :analogID
                         AND Analogs.AnalogID = HasAnalogs.AnalogID
                         AND HasAnalogs.PokemonID = Pokemon.PKID";
+                $bUsingAnalog = true;
             }
             
             //Name
@@ -74,6 +81,8 @@
                 $sqlWhere .= "Colors.ColorID = :colorID
                         AND Colors.ColorID = HasColors.ColorID
                         AND HasColors.PokemonID = Pokemon.PKID";
+
+                $bUsingColor = true;
             }
             
             //TypeID
@@ -90,6 +99,8 @@
                 $sqlWhere .= "Types.TypeID = :typeID
                         AND Types.TypeID = HasTypes.TypeID
                         AND HasTypes.PokemonID = Pokemon.PKID";
+
+                $bUsingType = true;
             }
             
             //EggGroupID
@@ -107,6 +118,7 @@
                         AND EggGroups.EggGroupID = InEggGroup.EggGroupID
                         AND InEggGroup.PokemonID = Pokemon.PKID";
                 
+                        $bUsingEggGroup = true;
             }
             
             $sqlStatement .= $sqlFrom;
@@ -122,13 +134,26 @@
             if ($bUsingName) {
                 $sth->bindValue(":namePart", $namePart);
             }
+            if ($bUsingID) {
+                $sth->bindValue(":pokemonID", $pokemonID);
+            }
+            
+            if ($bUsingAnalog) {
+                $sth->bindValue(":analogID", $analogID);
+            }
+            
+            if ($bUsingColor) {
+                $sth->bindValue(":colorID", $colorID);
+            }
 
-            $sth->bindValue(":pokemonID", $pokemonID);
-            $sth->bindValue(":analogID", $analogID);
-            $sth->bindValue(":colorID", $colorID);
-            $sth->bindValue(":typeID", $typeID);
-            $sth->bindValue(":eggGroupID", $eggGroupID);
-          
+            if ($bUsingType) {
+                $sth->bindValue(":typeID", $typeID);
+            }
+            
+            if ($bUsingEggGroup) {
+                $sth->bindValue(":eggGroupID", $eggGroupID);
+            }
+            
             $sth->execute();
             
             while ($row = $sth -> fetch ()) {
