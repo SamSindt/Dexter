@@ -43,4 +43,19 @@
 
             header ("Location: /Pokedex/Profile/Show/" . $_POST['pokemonID'] . "/");
         }
+
+        public function addanalog () {
+            if(isset($_POST['analogID']) && isset($_POST['pokemonID'])) {
+                $dbh = db_connect_w();
+                
+                $sth = $dbh->prepare("INSERT INTO HasAnalogs (PokemonID, AnalogID)
+                                      VALUES (:pokemonID, :analogID)");
+                
+                $sth->bindValue (":pokemonID", $_POST['pokemonID']);
+                $sth->bindValue (":analogID", $_POST['analogID']);
+                $sth->execute();
+                db_close($dbh);
+            }
+            header ("Location: /Pokedex/Profile/Show/" . $_POST['pokemonID'] . "/");
+        }
     }

@@ -152,8 +152,8 @@
 								print "</select><input TYPE='submit' NAME='btn' VALUE='Add Color'></form>";
 								
 								//Anologs
-								print "<form method='post' action='addAnalog.php'>
-									<input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='AnalogID'>";
+								print "<form method='post' action='/Pokedex/admin/addanalog'>
+									<input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='analogID'>";
 								
 								foreach ($unusedAnalogs as $analog) {
 									print "<option value=" . $analog[0] . ">" . $analog[1] . "</option>";
