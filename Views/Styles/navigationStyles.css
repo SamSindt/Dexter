@@ -1,9 +1,11 @@
 body {
+	font-family: Arial, Helvetica, sans-serif;
 	display: grid;
 	grid-template-rows: auto auto;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+
 }
 
 .topBar {

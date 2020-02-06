@@ -10,7 +10,7 @@ h1 {
 .wrapper {
 	grid-row-start: 3;
 	display: grid;
-	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-columns: auto auto auto;
 }
 
 .wrapper form {
