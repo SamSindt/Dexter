@@ -16,7 +16,7 @@
 
                 $salt = substr(hash("sha256",rand()), 0, 20);
 		
-                $dbh=db_connect_w();
+                $dbh = db_connect_w();
 
                 if ($this->userAlreadyExists ($dbh, $userName)) {
                     header ("Location: /Pokedex/usercreation/show/1");

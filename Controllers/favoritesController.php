@@ -4,11 +4,10 @@
     require_once __DIR__ . "/../Helpers/connDB.php";
 
     class FavoritesController {
-        private $model;
 
         public function show () {
-            $this->model = new FavoritesModel;
-            $view = new FavoritesView ($this->model);
+            $model = new FavoritesModel;
+            $view = new FavoritesView ($model);
             $view->output ();
         }
 
@@ -23,11 +22,11 @@
                 $dbh = db_connect_w();
                 
                 $sth = $dbh->prepare("DELETE FROM HasFavorite
-                                        WHERE UID = " . $_SESSION['userID']
-                                        . " AND PKID = " . $pokemonID);
+                                        WHERE UID = :userID AND PKID = :pokemonID");
+                $sth->bindValue(":pokemonID", $pokemonID);
+                $sth->bindValue(":userID", $_SESSION['userID']);
                 $sth->execute();
                 db_close($dbh);
-                
 	        }
         }
 
@@ -41,7 +40,9 @@
                 $dbh = db_connect_w();
                 
                 $sth = $dbh->prepare("INSERT INTO HasFavorite (UID, PKID)
-                                      VALUES (" . $_SESSION['userID'] . ", " . $pokemonID . ")");
+                                      VALUES (:userID, :pokemonID)");
+                $sth->bindValue(":pokemonID", $pokemonID);
+                $sth->bindValue(":userID", $_SESSION['userID']);
                 $sth->execute();
                 db_close($dbh);
             }

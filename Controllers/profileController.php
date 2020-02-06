@@ -3,13 +3,11 @@
     require_once __DIR__ . "/../Views/profileView.php";
 
     class ProfileController {
-        private $model;
 
-        public function show ($pokemonID) {//add is logged in
-            $this->model = new ProfileModel($pokemonID);
-            $view = new ProfileView($this->model, $this);
+        public function show ($pokemonID) {
+            $model = new ProfileModel($pokemonID);
+            $view = new ProfileView($model, $this);
             $view->output();
         }
-
     }
 ?>

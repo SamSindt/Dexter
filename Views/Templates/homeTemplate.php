@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en-us">
-
 	<head>
 		<meta charset="utf-8">
 		<title>Home</title>
@@ -23,8 +22,6 @@
 							print '<li id="admin" class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
 						}
 					?>
-					<li class="navItem"><!--Admin-->
-					</li>
 					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
 					<li class="navItem">
 						<?php

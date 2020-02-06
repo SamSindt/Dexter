@@ -24,10 +24,8 @@
 		<div class="wrapper">
 			<div class="inner">
 				<form method="post" action="/Pokedex/Usercreation/create">
-					
 					<div class="item">Username:<input name="userName" size="15" type="text" ><br></div>
 					<div class="item">Password:<input name="password" size="15" type="password" ><br></div>
-					
 					<input class="item" TYPE="submit" NAME="btnRegister" VALUE="Register">
 				
 				</form>

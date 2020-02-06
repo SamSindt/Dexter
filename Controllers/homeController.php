@@ -3,12 +3,11 @@
     require_once __DIR__ . "/../Views/homeView.php";
 
     class HomeController {
-        private $model;
         const EMPTY = "NA/";//should be static
 
         public function home () {//add is logged in
-            $this->model = new HomeModel;
-            $view = new HomeView($this->model, $this);
+            $model = new HomeModel;
+            $view = new HomeView($model, $this);
             $view->output();
         }
 

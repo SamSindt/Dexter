@@ -34,7 +34,7 @@
         }
 
         private function validateUser ($dbh, $userName, $password) {
-            $retVal = FALSE;
+            $retVal = false;
             $salt = $this->getSalt($dbh, $userName);
             
             $hashedPW = crypt($password . $salt,  '$2y$07$8d88bb4a9916b302c1c68c$');
@@ -46,14 +46,14 @@
             $sth->execute();
 
             if (1 == $sth -> rowCount()) {
-                $retVal = TRUE;
+                $retVal = true;
             }
 
             return $retVal;
         }
 
         private function getUserID($dbh, $userName) {
-            $userIDNum = -1;
+            $userID = -1;
     
             $sth = $dbh->prepare("SELECT * from Users 
                                   WHERE UserName = :userName");
@@ -64,13 +64,13 @@
             
             $userData = $sth -> fetch();
             
-            $userIDNum = $userData['UID'];
+            $userID = $userData['UID'];
             
-            return $userIDNum;
+            return $userID;
         }
 
         private function getAdminStatus($dbh, $userName) {
-            $isAdmin = FALSE;
+            $isAdmin = false;
     
             $sth = $dbh->prepare("SELECT Admin FROM Users 
                             WHERE UserName = :userName");
@@ -82,17 +82,17 @@
             $adminData = $sth -> fetch();
             
             if (1 == $adminData['Admin']) {
-                    $isAdmin = TRUE;
+                    $isAdmin = true;
             }
             return $isAdmin;
         }
 
-        private function getSalt ($dbh, $user) {
+        private function getSalt ($dbh, $userName) {
             $retVal = "NONE";
             
             $sth = $dbh -> prepare("SELECT Salt FROM Users WHERE
                          UserName = :user");
-            $sth -> bindValue(":user", $user);
+            $sth -> bindValue(":user", $userName);
             $sth -> execute();
             
             if (1 == $sth -> rowCount()) {

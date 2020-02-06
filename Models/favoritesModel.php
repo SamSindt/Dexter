@@ -18,13 +18,14 @@
         private function getFavorites ($dbh) {
             $rows = array();
             if (isset ($_SESSION['userID'])) {
-                $uid = $_SESSION['userID'];
+                $_SESSION['userID'];
                 
                 $sth = $dbh -> prepare("SELECT Name, Pokemon.PKID
                                         FROM HasFavorite, Pokemon  
-                                        WHERE UID = " . $uid
-                                        . " AND HasFavorite.PKID = Pokemon.PKID");
-            
+                                        WHERE UID = :userID
+                                        AND HasFavorite.PKID = Pokemon.PKID");
+
+                $sth->bindValue(":userID", $_SESSION['userID']);
                 $sth -> execute();
                 
                 while ($row = $sth -> fetch ()) {
@@ -34,12 +35,13 @@
             return $rows;
         }
 
-        private function getSprites($dbh) {//from searchModel
+        private function getSprites($dbh) {
             $rows = array();
             foreach ($this->pokemonArray as $pokemon) {
                 $sth = $dbh->prepare("SELECT Image, Type
-                                    FROM PokemonSprites
-                                    WHERE SID = " . $pokemon["PKID"]);
+                                      FROM PokemonSprites
+                                      WHERE SID = :pokemonID");
+                $sth->bindValue (":pokemonID", $pokemon["PKID"]);
                 $sth->execute();
                 $rows[] = $sth -> fetch ();
 

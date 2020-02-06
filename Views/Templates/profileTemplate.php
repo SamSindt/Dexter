@@ -48,7 +48,7 @@
 			<div class="wrapper">
 				<div class="card">
 					<div class="header">
-						<h1 id="pkName"><?php print $pokemonName ?></h1><!--Favoriting-->
+						<h1 id="pkName"><?php print $pokemonName ?></h1>
 						<?php 
 							if ($isLoggedIn) {
 								if ($isFavorited) {
@@ -143,7 +143,8 @@
 							if($isAdmin) {
 
 								//Colors
-								print "<form method='post' action='/Pokedex/admin/addcolor'><input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='colorID'>";
+								print "<form method='post' action='/Pokedex/admin/addcolor'>
+									<input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='colorID'>";
 
 								foreach ($unusedColors as $color) {
 									print '<option value=' . $color[0] . '> ' . $color[1] . '</option>';
@@ -164,7 +165,6 @@
 							}
 						?>
 				</div>
-				
 			</div>
 		</di>
 	</body>

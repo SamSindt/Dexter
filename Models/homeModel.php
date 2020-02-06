@@ -22,7 +22,6 @@
             db_close($dbh);
         }
 
-
         private function getLowestPKID ($dbh) {
 
             $sth = $dbh -> prepare("SELECT Pokemon.PKID 
@@ -45,7 +44,7 @@
             return ($sth -> fetch())['PKID'];
         }
 
-        private function getTypes ($dbh) { //may need to change so GETing by name not id
+        private function getTypes ($dbh) {
             $rows = array();
     
             $sth = $dbh -> prepare("SELECT TypeID, TypeName 
@@ -59,7 +58,7 @@
             return $rows;
         }
 
-        private function getAnalogs ($dbh) { //may need to change so GETing by name not id
+        private function getAnalogs ($dbh) {
             $rows = array();
     
             $sth = $dbh -> prepare("SELECT AnalogID, AnalogName 
@@ -87,7 +86,7 @@
             return $rows;
         }
 
-        private function getEggGroups ($dbh) { //may need to change so GETing by name not id
+        private function getEggGroups ($dbh) {
             $rows = array();
     
             $sth = $dbh -> prepare("SELECT EggGroupID, GroupName 

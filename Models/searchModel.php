@@ -25,7 +25,8 @@
             
             //PKID
             if ($this::EMPTY != $pokemonID) {
-                $sqlWhere .= "Pokemon.PKID = " . $pokemonID; 
+                $sqlWhere .= "Pokemon.PKID = :pokemonID";
+                
                 $bIsSecond = True;
             }
             
@@ -40,8 +41,8 @@
                     $bIsSecond = True;
                 }
                 
-                $sqlWhere .= "Analogs.AnalogID = " . $analogID
-                    . " AND Analogs.AnalogID = HasAnalogs.AnalogID
+                $sqlWhere .= "Analogs.AnalogID = :analogID
+                        AND Analogs.AnalogID = HasAnalogs.AnalogID
                         AND HasAnalogs.PokemonID = Pokemon.PKID";
             }
             
@@ -54,11 +55,9 @@
                     $bIsSecond = True;
                 }
                 
-                $sqlWhere .= "LOWER(Pokemon.Name) LIKE LOWER("
-                    . ":namePart"
-                    . ")";
+                $sqlWhere .= "LOWER(Pokemon.Name) LIKE LOWER(:namePart)";
                 $bUsingName = True;
-                $namePart = '%'.$namePart.'%';
+                $namePart = '%' . $namePart . '%';
             }
             
             //ColorID
@@ -72,8 +71,8 @@
                     $bIsSecond = True;
                 }
                 
-                $sqlWhere .= "Colors.ColorID = " . $colorID
-                    . " AND Colors.ColorID = HasColors.ColorID
+                $sqlWhere .= "Colors.ColorID = :colorID
+                        AND Colors.ColorID = HasColors.ColorID
                         AND HasColors.PokemonID = Pokemon.PKID";
             }
             
@@ -88,8 +87,8 @@
                     $bIsSecond = True;
                 }
                 
-                $sqlWhere .= "Types.TypeID = " . $typeID
-                    . " AND Types.TypeID = HasTypes.TypeID
+                $sqlWhere .= "Types.TypeID = :typeID
+                        AND Types.TypeID = HasTypes.TypeID
                         AND HasTypes.PokemonID = Pokemon.PKID";
             }
             
@@ -104,8 +103,8 @@
                     $bIsSecond = True;
                 }
                 
-                $sqlWhere .= "EggGroups.EggGroupID = " . $eggGroupID
-                    . " AND EggGroups.EggGroupID = InEggGroup.EggGroupID
+                $sqlWhere .= "EggGroups.EggGroupID = :eggGroupID
+                        AND EggGroups.EggGroupID = InEggGroup.EggGroupID
                         AND InEggGroup.PokemonID = Pokemon.PKID";
                 
             }
@@ -118,13 +117,19 @@
             $sqlStatement .= $sqlWhere;
             
             $rows = array();
-            $sth = $dbh -> prepare($sqlStatement);
+            $sth = $dbh->prepare($sqlStatement);
             
             if ($bUsingName) {
-                $sth -> bindValue(":namePart", $namePart);
+                $sth->bindValue(":namePart", $namePart);
             }
+
+            $sth->bindValue(":pokemonID", $pokemonID);
+            $sth->bindValue(":analogID", $analogID);
+            $sth->bindValue(":colorID", $colorID);
+            $sth->bindValue(":typeID", $typeID);
+            $sth->bindValue(":eggGroupID", $eggGroupID);
           
-            $sth -> execute();
+            $sth->execute();
             
             while ($row = $sth -> fetch ()) {
                 $rows[] = $row;
@@ -139,7 +144,8 @@
             foreach ($this->pokemonArray as $pokemon) {
                 $sth = $dbh->prepare("SELECT Image, Type
                                     FROM PokemonSprites
-                                    WHERE SID = " . $pokemon["PKID"]);
+                                    WHERE SID = :pokemonID");
+                $sth->bindValue(":pokemonID", $pokemon["PKID"]);
                 $sth->execute();
                 $rows[] = $sth -> fetch ();
             }

@@ -31,11 +31,6 @@
 					<input class="item" id="submit" TYPE="submit" NAME="btnLogin" VALUE="Login">
 				</form>
 				<a href="/Pokedex/Usercreation/show/">Create an Account</a>
-				<?php
-					if (true == $invalidFlag ) {
-						print "<p>Invalid Credentials.</p>";
-					}
-				?>
 			</div>
 		</div>
 	</body>

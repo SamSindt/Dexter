@@ -45,7 +45,9 @@
 
             $sth = $dbh -> prepare("SELECT *
                                     FROM Pokemon 
-                                    WHERE PKID =" . $pokemonID );
+                                    WHERE PKID = :pokemonID");
+
+            $sth->bindValue(":pokemonID", $pokemonID);
             $sth -> execute();
     
             return $sth -> fetch();
@@ -55,7 +57,9 @@
             
             $sth = $dbh -> prepare("SELECT EvolvesTo, Name
                                     FROM Evolutions, Pokemon
-                                    WHERE EvolvesFrom =" . $evolvesFrom . " AND EvolvesTo = PKID");
+                                    WHERE EvolvesFrom = :evolvesFrom AND EvolvesTo = PKID");
+
+            $sth->bindValue(":evolvesFrom", $evolvesFrom);
             $sth -> execute();
     
             return $sth -> fetch();
@@ -64,8 +68,8 @@
         private function getEvolvesFrom($dbh, $evolvesTo) {
             $sth = $dbh -> prepare("SELECT EvolvesFrom, Name
                                     FROM Evolutions, Pokemon
-                                    WHERE EvolvesTo =" . $evolvesTo . " AND EvolvesFrom = PKID");
-            
+                                    WHERE EvolvesTo = :evolvesTo AND EvolvesFrom = PKID");
+            $sth->bindValue(":evolvesTo", $evolvesTo);
             $sth -> execute ();
             
             return $sth -> fetch ();
@@ -76,8 +80,9 @@
     
             $sth = $dbh -> prepare("SELECT Image, Type
                                     FROM HasTypes, Types, TypeImages
-                                    WHERE PokemonID = " . $pokemonID . " AND HasTypes.TypeID = Types.TypeID
+                                    WHERE PokemonID = :pokemonID AND HasTypes.TypeID = Types.TypeID
                                     AND Types.TypeID = TypeImages.TypeImageID" );
+            $sth->bindValue(":pokemonID", $pokemonID);
             $sth -> execute();
             
             while ($row = $sth -> fetch ()) {
@@ -87,11 +92,10 @@
         }
 
         private function getProfileImage($dbh, $pokemonID) {
-
             $sth = $dbh->prepare("SELECT Image, Type
 							  FROM PokemonImages
-							  WHERE IID=:picid");
-		    $sth->bindValue(":picid", $pokemonID);
+							  WHERE IID = :pokemonID");
+		    $sth->bindValue(":pokemonID", $pokemonID);
 		
 		    $sth->execute();
 	  
@@ -99,7 +103,6 @@
         }
 
         private function checkIfFavorite ($dbh, $pokemonID) {
-		
             $bFlag = false;
 
             if(!isset($_SESSION)) { 
@@ -109,11 +112,12 @@
             if (isset ($_SESSION['userID'])) {
                 $sth = $dbh -> prepare("SELECT *
                                         FROM HasFavorite, Pokemon  
-                                        WHERE UID = " . $_SESSION['userID']
-                                        . " AND HasFavorite.PKID = " . $pokemonID);
+                                        WHERE UID = :userID AND HasFavorite.PKID = :pokemonID");
             
+                $sth->bindValue(":pokemonID", $pokemonID);
+                $sth->bindValue(":userID", $_SESSION['userID']);
                 $sth -> execute();
-                
+
                 $result = $sth -> fetch();
                 
                 if ($result) {
