@@ -23,10 +23,12 @@ function addLogoutAndStayListener () {
 
 function addLogoutAndRedirectListener () {
 	document.getElementById("logout").addEventListener ("click", function () {
-		window.location.replace ("/Pokedex/home");
+		
 		$.ajax({
 			type: 'POST',
 			url: '/Pokedex/logout/submit',
+			async:false,
 		});
+		window.location.replace ("/Pokedex/home");
 	});
 }
