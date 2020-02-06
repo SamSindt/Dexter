@@ -143,7 +143,7 @@
 							if($isAdmin) {
 
 								//Colors
-								print "<form method='post' action='addColor.php'><input type='hidden' name='pkid' value='" . $pokemonID . "'><select name='ColorID'>";
+								print "<form method='post' action='/Pokedex/admin/addcolor'><input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='colorID'>";
 
 								foreach ($unusedColors as $color) {
 									print '<option value=' . $color[0] . '> ' . $color[1] . '</option>';
@@ -153,10 +153,10 @@
 								
 								//Anologs
 								print "<form method='post' action='addAnalog.php'>
-									<input type='hidden' name='pkid' value='" . $pokemonID . "'><select name='AnalogID'>";
+									<input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='AnalogID'>";
 								
 								foreach ($unusedAnalogs as $analog) {
-									print "<option value=" . $analog . ">" . $analog . "</option>";
+									print "<option value=" . $analog[0] . ">" . $analog[1] . "</option>";
 								}
 								
 								print "</select><input TYPE='submit' NAME='btn' VALUE='Add Analog'></form>";

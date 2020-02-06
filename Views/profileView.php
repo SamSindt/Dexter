@@ -39,11 +39,11 @@
             $isLoggedIn = $this->userModel->isLoggedIn;
             $isAdmin = $this->userModel->isAdmin;
             $unusedColors = array();
-            $unusedAnalog = array ();
+            $unusedAnalogs = array ();
 
             if (null != $this->adminUpdateProfileModel) {
                 $unusedColors = $this->adminUpdateProfileModel->unusedColors;
-                $unusedAnalog = $this->adminUpdateProfileModel->unusedAnalogs;
+                $unusedAnalogs = $this->adminUpdateProfileModel->unusedAnalogs;
             }
 
             require_once __DIR__ . "/Templates/profileTemplate.php";

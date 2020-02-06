@@ -28,4 +28,19 @@
             $sth->execute();
             db_close($dbh);
         }
+
+        public function addcolor () {
+            if(isset($_POST['colorID']) && isset($_POST['pokemonID'])) {
+                $dbh = db_connect_w();
+                
+                $sth = $dbh->prepare("INSERT INTO HasColors (PokemonID, ColorID)
+                                      VALUES (:pokemonID, :colorID)");
+                $sth->bindValue(":pokemonID", $_POST['pokemonID']);
+                $sth->bindValue(":colorID", $_POST['colorID']);
+                $sth->execute();
+                db_close($dbh);
+            }
+
+            header ("Location: /Pokedex/Profile/Show/" . $_POST['pokemonID'] . "/");
+        }
     }
