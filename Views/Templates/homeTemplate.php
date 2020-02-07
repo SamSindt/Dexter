@@ -54,33 +54,33 @@
 		<form method="post" action="home/redirect">
 		
 		<div class="formField">Name:
-			<input TYPE="search" NAME="NameLike">
+			<input TYPE="search" name="NameLike">
 		</div>
 		
 
 			<div class="formField">ID:
 					<?php
-						print '<input TYPE="number" NAME="PKID" MIN=\"" . $lowestPKID . "\" MAX=\"" . $highestPKID . "\">';
+						print '<input type="number" name="PKID" min=\"" . $lowestPKID . "\" max=\"" . $highestPKID . "\">';
 					?>
 			</div>
 			
 			<div class="formField">Type:
-				<select NAME="TypeID">
-					<option VALUE=0></option>
+				<select name="TypeID">
+					<option value=0></option>
 					<?php
 						foreach ( $types as $type ) {
-							print '<option VALUE=' . $type[0] . '> ' . $type[1] . '</option>';
+							print '<option value=' . $type[0] . '> ' . $type[1] . '</option>';
 						}
 					?>
 				</select>
 			</div>
 
 			<div class="formField">Analog:
-				<select NAME="AnalogID">
-					<option VALUE=0></option>
+				<select name="AnalogID">
+					<option value=0></option>
 					<?php
 						foreach ( $analogs as $analog ) {
-							print '<option VALUE=' . $analog[0] . '> ' . $analog[1] . '</option>';
+							print '<option value=' . $analog[0] . '> ' . $analog[1] . '</option>';
 						}
 					?>
 				</select>
@@ -88,30 +88,30 @@
 
 			
 			<div class="formField">Color:
-				<select NAME="ColorID">
-					<option VALUE=0></option>
+				<select name="ColorID">
+					<option value=0></option>
 					<?php
 						
 						foreach ( $colors as $color ) {
-							print '<option VALUE=' . $color[0] . '> ' . $color[1] . '</option>';
+							print '<option value=' . $color[0] . '> ' . $color[1] . '</option>';
 						}
 					?>
 				</select>
 			</div>
 			
 			<div class="formField">Egg Group:
-				<select NAME="EggGroupID">
-					<option VALUE=0></option>
+				<select name="EggGroupID">
+					<option value=0></option>
 					<?php
 						
 						foreach ( $eggGroups as $eggGroup ) {
-							print '<option VALUE=' . $eggGroup[0] . '> ' . $eggGroup[1] . '</option>';
+							print '<option value=' . $eggGroup[0] . '> ' . $eggGroup[1] . '</option>';
 						}
 					?>
 				</select>
 			</div>
 			
-				<input id="search" class="formField" TYPE="submit" NAME="Request" VALUE="Search">
+				<input id="search" class="formField" type="submit" name="Request" value="Search">
 			</form>
 		</div>
 	</body>

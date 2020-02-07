@@ -28,7 +28,7 @@
 					<div class="item">Username:<input name="txtUser" size="15" type="text"><br></div>
 					<div class="item">Password:<input name="txtPassword" size="15" type="password"><br></div>
 					
-					<input class="item" id="submit" TYPE="submit" NAME="btnLogin" VALUE="Login">
+					<input class="item" id="submit" type="submit" name="btnLogin" value="Login">
 				</form>
 				<a href="/Dexter/Usercreation/show/">Create an Account</a>
 			</div>
