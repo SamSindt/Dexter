@@ -11,7 +11,7 @@ function addUnfavoriteListener (pokemonID) {
 
         $.ajax({
             type: "POST",
-            url: "/Pokedex/Favorites/unfavorite/" + pokemonID,
+            url: "/Dexter/Favorites/unfavorite/" + pokemonID,
         });
 
         addFavoriteListener (pokemonID);
@@ -31,7 +31,7 @@ function addFavoriteListener (pokemonID) {
 
         $.ajax({
             type: "POST",
-            url: "/Pokedex/Favorites/favorite/" + pokemonID,
+            url: "/Dexter/Favorites/favorite/" + pokemonID,
         });
 
         addUnfavoriteListener (pokemonID);

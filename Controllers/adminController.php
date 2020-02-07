@@ -41,7 +41,7 @@
                 db_close($dbh);
             }
 
-            header ("Location: /Pokedex/Profile/Show/" . $_POST['pokemonID'] . "/");
+            header ("Location: /Dexter/Profile/Show/" . $_POST['pokemonID'] . "/");
         }
 
         public function addanalog () {
@@ -56,6 +56,6 @@
                 $sth->execute();
                 db_close($dbh);
             }
-            header ("Location: /Pokedex/Profile/Show/" . $_POST['pokemonID'] . "/");
+            header ("Location: /Dexter/Profile/Show/" . $_POST['pokemonID'] . "/");
         }
     }

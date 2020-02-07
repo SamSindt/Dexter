@@ -14,11 +14,11 @@
 
     <body>
         <div class="topBar">
-            <div class="title"><b>Pokedex</b></div>
+            <div class="title"><b>Dexter</b></div>
             <ul class="nav">
-                <li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>
-                <li class="navItem"><a href="/Pokedex/home">Home</a></li>
-                <li class="navItem"><a id="favorites" href="/Pokedex/favorites/show">Favorites</a></li>
+                <li class="navItem"><a href="/Dexter/admin/show">Admin</a></li>
+                <li class="navItem"><a href="/Dexter/home">Home</a></li>
+                <li class="navItem"><a id="favorites" href="/Dexter/favorites/show">Favorites</a></li>
                 <li class="navItem"><a id="logout" href="#">Logout</a></li>
             </ul>
         </div>

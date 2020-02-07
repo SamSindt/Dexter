@@ -9,7 +9,7 @@ function addDeactivateListeners () {
 
             $.ajax({
                 type: "POST",
-                url: "/Pokedex/admin/deactivate/" + id,
+                url: "/Dexter/admin/deactivate/" + id,
             });
         }
 
@@ -30,7 +30,7 @@ function addMakeAdminListeners () {
 
             $.ajax({
                 type: "POST",
-                url: "/Pokedex/admin/makeadmin/" + id,
+                url: "/Dexter/admin/makeadmin/" + id,
             });
         }
 

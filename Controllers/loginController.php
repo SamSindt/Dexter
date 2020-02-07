@@ -25,7 +25,7 @@
                     $_SESSION['userID'] = (int) $this->getUserID($dbh, $userName);
                     $_SESSION['isAdmin'] = $this->getAdminStatus($dbh, $userName);
                     
-                    header('Location: /Pokedex/home');
+                    header('Location: /Dexter/home');
                 }
                 else {
                     $this->show (1);

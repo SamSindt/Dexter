@@ -10,7 +10,7 @@ function addUnfavoriteListeners () {
         
             $.ajax({
                 type: "POST",
-                url: "/Pokedex/favorites/unfavorite/" + id,
+                url: "/Dexter/favorites/unfavorite/" + id,
             });
         };
 

@@ -14,9 +14,9 @@
 	
 	<body>
 		<div class="topBar">
-			<div class="title"><b>Pokedex</b></div>
+			<div class="title"><b>Dexter</b></div>
 			<ul class="nav">
-				<li class="navItem"><a href="/Pokedex/home">Home</a></li>
+				<li class="navItem"><a href="/Dexter/home">Home</a></li>
 			</ul>
 		</div>
 		
@@ -24,13 +24,13 @@
 			<div class="inner">
 				<h1>Login</h1>
 				
-				<form method="post" name="formLogin" action="/Pokedex/login/submit">
+				<form method="post" name="formLogin" action="/Dexter/login/submit">
 					<div class="item">Username:<input name="txtUser" size="15" type="text"><br></div>
 					<div class="item">Password:<input name="txtPassword" size="15" type="password"><br></div>
 					
 					<input class="item" id="submit" TYPE="submit" NAME="btnLogin" VALUE="Login">
 				</form>
-				<a href="/Pokedex/Usercreation/show/">Create an Account</a>
+				<a href="/Dexter/Usercreation/show/">Create an Account</a>
 			</div>
 		</div>
 	</body>

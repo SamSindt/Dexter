@@ -19,10 +19,10 @@
                 $dbh = db_connect_w();
 
                 if ($this->userAlreadyExists ($dbh, $userName)) {
-                    header ("Location: /Pokedex/usercreation/show/1");
+                    header ("Location: /Dexter/usercreation/show/1");
                 }
                 else if ("" == trim ($userName)) {
-                    header ("Location: /Pokedex/usercreation/show/2");
+                    header ("Location: /Dexter/usercreation/show/2");
                 }
                 else {
                     $sth = $dbh->prepare("INSERT INTO Users (UserName, Password, Salt) 
@@ -38,7 +38,7 @@
                     
                     db_close($dbh);
 
-                    header ("Location: /Pokedex/login/show");
+                    header ("Location: /Dexter/login/show");
                 }             
             }               
         }

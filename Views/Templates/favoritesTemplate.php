@@ -15,14 +15,14 @@
 	</head>
 	<body>
 		<div class="topBar">
-			<div class="title"><b>Pokedex</b></div>
+			<div class="title"><b>Dexter</b></div>
 				<ul class="nav">
 					<?php 
 						if ($isAdmin) {
-							print '<li class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+							print '<li class="navItem"><a href="/Dexter/admin/show">Admin</a></li>';
 						}
 					?>
-					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
+					<li class="navItem"><a href="/Dexter/home">Home</a></li>
 					<li class="navItem"><a id="logout" href="#">Logout</a></li>
 				</ul>
 			</div>
@@ -37,7 +37,7 @@
                         
 						print "<li><img src='data:" . $spriteIterator->current()["Type"]
 						 . ";base64, " . base64_encode($spriteIterator->current()["Image"])
-						 . "'><a href='/Pokedex/Profile/Show/" . $pokemon['PKID'] . "/'>" . $pokemon['Name'] . "</a><button class='unfavorite' id='"
+						 . "'><a href='/Dexter/Profile/Show/" . $pokemon['PKID'] . "/'>" . $pokemon['Name'] . "</a><button class='unfavorite' id='"
 						 . $pokemon['PKID'] . "'>X</button></li>";
                         $spriteIterator->next();
                     }

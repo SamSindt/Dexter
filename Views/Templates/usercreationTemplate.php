@@ -14,16 +14,16 @@
 	
 	<body>
 	<div class="topBar">
-		<div class="title"><b>Pokedex</b></div>
+		<div class="title"><b>Dexter</b></div>
 			<ul class="nav">
-				<li class="navItem"><a href="/Pokedex/home">Home</a></li>
+				<li class="navItem"><a href="/Dexter/home">Home</a></li>
 			</ul>
 		</div>
 	</div>
 		<h1>Create an Account</h1>
 		<div class="wrapper">
 			<div class="inner">
-				<form method="post" action="/Pokedex/Usercreation/create">
+				<form method="post" action="/Dexter/Usercreation/create">
 					<div class="item">Username:<input name="userName" size="15" type="text" ><br></div>
 					<div class="item">Password:<input name="password" size="15" type="password" ><br></div>
 					<input class="item" TYPE="submit" NAME="btnRegister" VALUE="Register">

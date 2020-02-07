@@ -12,7 +12,7 @@
         }
 
         public function redirect () {
-            $uri = "/Pokedex/Search/Results/";
+            $uri = "/Dexter/Search/Results/";
 
             //PKID 
             if(isset($_POST["PKID"]) && 0 != $_POST["PKID"]) {

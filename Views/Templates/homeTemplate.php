@@ -15,21 +15,21 @@
 	<body>
 	
 		<div class="topBar">
-			<div class="title"><b>Pokedex</b></div>
+			<div class="title"><b>Dexter</b></div>
 				<ul class="nav">
 					<?php 
 						if ($isAdmin) {
-							print '<li id="admin" class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+							print '<li id="admin" class="navItem"><a href="/Dexter/admin/show">Admin</a></li>';
 						}
 					?>
-					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
+					<li class="navItem"><a href="/Dexter/home">Home</a></li>
 					<li class="navItem">
 						<?php
 							if ($isLoggedIn) {
-								print '<a id="favorites" href="/Pokedex/favorites/show">Favorites</a>';
+								print '<a id="favorites" href="/Dexter/favorites/show">Favorites</a>';
 							}
 							else {
-								print '<a id="favorites" href="/Pokedex/login/show" id="login">Favorites</a>';
+								print '<a id="favorites" href="/Dexter/login/show" id="login">Favorites</a>';
 							}
 						?>
 					</li>
@@ -39,7 +39,7 @@
 								print '<a href="#" id="logout">Logout</a>';
 							}
 							else {
-								print '<a href="/Pokedex/login/show" id="login">Login</a>';
+								print '<a href="/Dexter/login/show" id="login">Login</a>';
 							}
 						?>
 					</li>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		
-		<h1>Search Pokemon</h1>
+		<h1>Search Pokémon</h1>
 	
 		<div class="wrapper">
 	

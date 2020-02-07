@@ -13,7 +13,7 @@
         protected $controller = 'HomeController';
         protected $action = 'home';
         protected $params = array();
-        protected $basePath = "Pokedex/";
+        protected $basePath = "Dexter/";
 
         public function __construct(array $options = array()) {
             if (empty($options)) {

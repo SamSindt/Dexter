@@ -14,21 +14,21 @@
 
 		<body>
 			<div class="topBar">
-				<div class="title"><b>Pokedex</b></div>
+				<div class="title"><b>Dexter</b></div>
 				<ul class="nav">
 					<?php 
 						if ($isAdmin) {
-							print '<li id="admin" class="navItem"><a href="/Pokedex/admin/show">Admin</a></li>';
+							print '<li id="admin" class="navItem"><a href="/Dexter/admin/show">Admin</a></li>';
 						}
 					?>
-					<li class="navItem"><a href="/Pokedex/home">Home</a></li>
+					<li class="navItem"><a href="/Dexter/home">Home</a></li>
 					<li class="navItem">
 						<?php
 							if ($isLoggedIn) {
-								print '<a id="favorites" href="/Pokedex/favorites/show">Favorites</a>';
+								print '<a id="favorites" href="/Dexter/favorites/show">Favorites</a>';
 							}
 							else {
-								print '<a id="favorites" href="/Pokedex/login/show" id="login">Favorites</a>';
+								print '<a id="favorites" href="/Dexter/login/show" id="login">Favorites</a>';
 							}
 						?>
 					</li>
@@ -38,7 +38,7 @@
 								print '<a href="#" id="logout">Logout</a>';
 							}
 							else {
-								print '<a href="/Pokedex/login/show" id="login">Login</a>';
+								print '<a href="/Dexter/login/show" id="login">Login</a>';
 							}
 						?>
 					</li>
@@ -59,7 +59,7 @@
 								}
 							}
 							else {
-								print "<h1 class='fave' id='unfaved'><a href='/Pokedex/login/show'>☆</a></h1>";
+								print "<h1 class='fave' id='unfaved'><a href='/Dexter/login/show'>☆</a></h1>";
 							}
 						?>
 						</div>
@@ -68,7 +68,7 @@
 					
 					<div id="numAndTypes">
 					
-						<h4 id="pkNumber"><?php print 'Pokedex # ' . $dexNumber ?></h4>
+						<h4 id="pkNumber"><?php print 'Dexter # ' . $dexNumber ?></h4>
 						
 						<div id="pkTypes">
 							<h4>Type: </h4>
@@ -85,13 +85,13 @@
 						<?php
 							
 							if (!empty($evolvesFrom)) {
-								 print "<h4 id='evolFr'>Evolves From: <a href='/Pokedex/Profile/Show/" . $evolvesFrom["EvolvesFrom"] . "/'>" 
+								 print "<h4 id='evolFr'>Evolves From: <a href='/Dexter/Profile/Show/" . $evolvesFrom["EvolvesFrom"] . "/'>" 
 									. $evolvesFrom["Name"] . "</a></h4>";
 							}
 							
 							
 							if (!empty($evolvesTo)) {
-								print "<h4 id='evolTo'>Evolves To: <a href='/Pokedex/Profile/Show/" . $evolvesTo["EvolvesTo"] . "'>"
+								print "<h4 id='evolTo'>Evolves To: <a href='/Dexter/Profile/Show/" . $evolvesTo["EvolvesTo"] . "'>"
 									. $evolvesTo["Name"] . "</a></h4>";
 							}
 						?>
@@ -143,7 +143,7 @@
 							if($isAdmin) {
 
 								//Colors
-								print "<form method='post' action='/Pokedex/admin/addcolor'>
+								print "<form method='post' action='/Dexter/admin/addcolor'>
 									<input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='colorID'>";
 
 								foreach ($unusedColors as $color) {
@@ -153,7 +153,7 @@
 								print "</select><input TYPE='submit' NAME='btn' VALUE='Add Color'></form>";
 								
 								//Anologs
-								print "<form method='post' action='/Pokedex/admin/addanalog'>
+								print "<form method='post' action='/Dexter/admin/addanalog'>
 									<input type='hidden' name='pokemonID' value='" . $pokemonID . "'><select name='analogID'>";
 								
 								foreach ($unusedAnalogs as $analog) {
