@@ -6,7 +6,7 @@ The project utilizes the Model View Controller architecture and relies on routin
 
 # Installation
 
-First, clone the repository into the root directory of an Apache HTTP Server. To setup the initial state of the database, run the command, navigate to the directory `DatabaseState` and concatenate the fragmented MySQL dump file.
+First, clone the repository into the root directory of an Apache HTTP Server. To setup the initial state of the database, navigate to the directory `DatabaseState` and concatenate the fragmented MySQL dump file.
 ```bash
 $ cat xaa xab xac > dbStartState.sql
 ```
